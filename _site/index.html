@@ -1,0 +1,436 @@
+<!doctype html>
+
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>sh4rkside</title>
+<meta name="description" content="Artículos sobre sistemas, ciberseguridad y linux.">
+
+
+  <meta name="author" content="SrBellver">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="sh4rkside">
+<meta property="og:title" content="sh4rkside">
+<meta property="og:url" content="http://localhost:4000/">
+
+
+  <meta property="og:description" content="Artículos sobre sistemas, ciberseguridad y linux.">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sh4rkside",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="sh4rkside Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--home">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo/banner.png" alt=" "></a>
+        
+        <a class="site-title" href="/">
+           
+          
+        </a>
+        <ul class="visible-links">
+            
+              <li class="masthead__menu-item">
+                <a href="/">Home</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/year-archive/">Artículos</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/categories/">Categorías</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/tags/">Etiquetas</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/aboutme/">Sobre mí</a>
+              </li>
+            
+              <li class="masthead__menu-item">
+                <a href="/search/"><i class="fas fa-search" style="color:red"></i></a>
+              </li>
+            
+            </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+    
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar" >
+      <!-- <a href="http://localhost:4000/">
+        <img src="/assets/images/avatar.jpg" alt="SrBellver" itemprop="image" class="u-photo">
+      </a> -->
+      <img src="/assets/images/avatar.jpg" alt="SrBellver" itemprop="image" class="u-photo">
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <!-- <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">SrBellver</a> -->
+      SrBellver
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Administrador de sistemas en <strong>Hadoq</strong> <br />FPGS - ASIR / PCAP / WEHC / M4H</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <a href="https://goo.gl/maps/ZEB51426pFEfrJyM9" rel="nofollow noopener noreferrer" target="blank">
+            <i class="fas fa-location-arrow fa-lg" aria-hidden="true"></i><span itemprop="name" class="p-locality">&nbsp;&nbsp;España</span>
+          </a>
+          </li>
+      
+
+      
+        
+          <!-- Para que no muestre enlace en el texto del correo, elimino etiqueta href (no rederigia a ningun lado, estaba mal). Lo identifico con la varibale link.icon-->
+          
+          <li><i class="fas fa-envelope fa-lg" aria-hidden="true"></i><span class="label">&nbsp; adrian.bellver.a@gmail.com</span></a></li>
+          
+                    
+        
+          <!-- Para que no muestre enlace en el texto del correo, elimino etiqueta href (no rederigia a ningun lado, estaba mal). Lo identifico con la varibale link.icon-->
+          
+          
+            <li><a href="https://www.linkedin.com/in/adri%C3%A1n-bellver-%C3%A1vila/" rel="nofollow noopener noreferrer" target="blank"><i class="fab fa-linkedin-in fa-lg" aria-hidden="true"></i><span class="label">&nbsp;&nbsp;Linkedin</span></a></li>
+                    
+        
+          <!-- Para que no muestre enlace en el texto del correo, elimino etiqueta href (no rederigia a ningun lado, estaba mal). Lo identifico con la varibale link.icon-->
+          
+          
+            <li><a href="https://github.com/sh4rkside" rel="nofollow noopener noreferrer" target="blank"><i class="fab fa-github-alt fa-lg" aria-hidden="true"></i><span class="label">&nbsp;&nbsp;GitHub</span></a></li>
+                    
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title"></h1>
+    
+    
+
+<h3 class="archive__subtitle">Artículos recientes</h3>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/como-hacer-uso-tmux/" rel="permalink">Como hacer uso de tmux
+</a>
+        
+      
+    </h2>
+
+    <p class="page__meta">
+      
+        <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2021-08-20T00:00:00+02:00">August 20, 2021 </time>&emsp;
+      
+      
+    </p>
+
+    <p class="archive__item-excerpt" itemprop="description"><img src="/assets/images/como-hacer-uso-tmux/teaser.png" alt="" style="float: right;margin-right:10px; margin-left:20px; margin-bottom:10px; height:120px;">En este artículo, os enseño a utilizar tmux desde 0. Explicación de que es tmux, su instalación y correcta utilización.
+</p>
+    <i class="fas fa-tags"></i>
+    
+      <a href="/tags/#tmux" class="page__meta btn" rel="tag">tmux</a>
+    
+      <a href="/tags/#terminal" class="page__meta btn" rel="tag">terminal</a>
+    
+  </article>
+</div>
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/entorno-profesional-trabajo-linux-bspwm/" rel="permalink">Entorno profesional de trabajo en linux - bspwm
+</a>
+        
+      
+    </h2>
+
+    <p class="page__meta">
+      
+        <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2021-08-12">August 12, 2021</time>&emsp;
+      
+      
+    </p>
+
+    <p class="archive__item-excerpt" itemprop="description"><img src="/assets/images/entorno-trabajo-profesional-bspwm/entorno2.png" alt="" style="float: right;margin-right:10px; margin-left:20px; margin-bottom:10px; height:120px;">¿Te gustaría disponer de un entorno profesional de trabajo en linux, para ser más productivo y contar con más rendimiento en tus proyectos? Entra aqui. ¡Este es tu artículo!
+</p>
+    <i class="fas fa-tags"></i>
+    
+      <a href="/tags/#bspwm" class="page__meta btn" rel="tag">bspwm</a>
+    
+      <a href="/tags/#sxhkd" class="page__meta btn" rel="tag">sxhkd</a>
+    
+      <a href="/tags/#picom" class="page__meta btn" rel="tag">picom</a>
+    
+      <a href="/tags/#rofi" class="page__meta btn" rel="tag">rofi</a>
+    
+      <a href="/tags/#polybar" class="page__meta btn" rel="tag">polybar</a>
+    
+      <a href="/tags/#linux" class="page__meta btn" rel="tag">linux</a>
+    
+      <a href="/tags/#bash" class="page__meta btn" rel="tag">bash</a>
+    
+  </article>
+</div>
+
+
+
+
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <!-- <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div> -->
+
+<div class="page__footer-copyright" align="center">&copy; January 2022 | Sh4rkside | Escrito por SrBellver</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

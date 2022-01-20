@@ -1,0 +1,712 @@
+<!doctype html>
+
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Como hacer uso de tmux | sh4rkside</title>
+<meta name="description" content="En este artículo, os enseño a utilizar tmux desde 0. Explicación de que es tmux, su instalación y correcta utilización.">
+
+
+  <meta name="author" content="SrBellver">
+  
+  <meta property="article:author" content="SrBellver">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="sh4rkside">
+<meta property="og:title" content="Como hacer uso de tmux">
+<meta property="og:url" content="http://localhost:4000/como-hacer-uso-tmux/">
+
+
+  <meta property="og:description" content="En este artículo, os enseño a utilizar tmux desde 0. Explicación de que es tmux, su instalación y correcta utilización.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/como-hacer-uso-tmux/teaser.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-08-20T00:00:00+02:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/como-hacer-uso-tmux/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sh4rkside",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="sh4rkside Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo/banner.png" alt=" "></a>
+        
+        <a class="site-title" href="/">
+           
+          
+        </a>
+        <ul class="visible-links">
+            
+              <li class="masthead__menu-item">
+                <a href="/">Home</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/year-archive/">Artículos</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/categories/">Categorías</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/tags/">Etiquetas</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/aboutme/">Sobre mí</a>
+              </li>
+            
+              <li class="masthead__menu-item">
+                <a href="/search/"><i class="fas fa-search" style="color:red"></i></a>
+              </li>
+            
+            </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+    
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Como hacer uso de tmux</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar" >
+      <!-- <a href="http://localhost:4000/">
+        <img src="/assets/images/avatar.jpg" alt="SrBellver" itemprop="image" class="u-photo">
+      </a> -->
+      <img src="/assets/images/avatar.jpg" alt="SrBellver" itemprop="image" class="u-photo">
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <!-- <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">SrBellver</a> -->
+      SrBellver
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Administrador de sistemas en <strong>Hadoq</strong> <br />FPGS - ASIR / PCAP / WEHC / M4H</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <a href="https://goo.gl/maps/ZEB51426pFEfrJyM9" rel="nofollow noopener noreferrer" target="blank">
+            <i class="fas fa-location-arrow fa-lg" aria-hidden="true"></i><span itemprop="name" class="p-locality">&nbsp;&nbsp;España</span>
+          </a>
+          </li>
+      
+
+      
+        
+          <!-- Para que no muestre enlace en el texto del correo, elimino etiqueta href (no rederigia a ningun lado, estaba mal). Lo identifico con la varibale link.icon-->
+          
+          <li><i class="fas fa-envelope fa-lg" aria-hidden="true"></i><span class="label">&nbsp; adrian.bellver.a@gmail.com</span></a></li>
+          
+                    
+        
+          <!-- Para que no muestre enlace en el texto del correo, elimino etiqueta href (no rederigia a ningun lado, estaba mal). Lo identifico con la varibale link.icon-->
+          
+          
+            <li><a href="https://www.linkedin.com/in/adri%C3%A1n-bellver-%C3%A1vila/" rel="nofollow noopener noreferrer" target="blank"><i class="fab fa-linkedin-in fa-lg" aria-hidden="true"></i><span class="label">&nbsp;&nbsp;Linkedin</span></a></li>
+                    
+        
+          <!-- Para que no muestre enlace en el texto del correo, elimino etiqueta href (no rederigia a ningun lado, estaba mal). Lo identifico con la varibale link.icon-->
+          
+          
+            <li><a href="https://github.com/sh4rkside" rel="nofollow noopener noreferrer" target="blank"><i class="fab fa-github-alt fa-lg" aria-hidden="true"></i><span class="label">&nbsp;&nbsp;GitHub</span></a></li>
+                    
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Como hacer uso de tmux">
+    <meta itemprop="description" content="En este artículo, os enseño a utilizar tmux desde 0. Explicación de que es tmux, su instalación y correcta utilización.">
+    <meta itemprop="datePublished" content="2021-08-20T00:00:00+02:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a class="u-url" itemprop="url">Como hacer uso de tmux
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+        
+        <time datetime="2021-08-20T00:00:00+02:00">August 20, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title" style="background: #b94747"}><i class="fas fa-file-alt"></i> &#10148; Como hacer uso de tmux</h4></header>
+              <ul class="toc__menu"><li><a href="#instalación">Instalación</a><ul><li><a href="#tmux">tmux</a></li><li><a href="#tema">Tema</a></li></ul></li><li><a href="#shortcuts">Shortcuts</a><ul><li><a href="#prefix">Prefix</a></li><li><a href="#modo-ratón">Modo ratón</a></li><li><a href="#session">Session</a></li><li><a href="#windown">Windown</a></li><li><a href="#panel">Panel</a><ul><li><a href="#modo-copia-y-modo-selección">Modo copia y Modo selección</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+          <br>
+        
+        <style type="text/css">
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 35px;
+        height: 0;
+        overflow: hidden;
+    }
+    .video-container video {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<p><code class="language-plaintext highlighter-rouge">Terminal Multiplexer - tmux</code> es una herramienta que realiza la multiplexación de terminales. Permite lanzar <code class="language-plaintext highlighter-rouge">sesiones</code> de tmux que estas contienen <code class="language-plaintext highlighter-rouge">ventanas</code> y <code class="language-plaintext highlighter-rouge">paneles</code>. Posteriormente expondré el significado de esta nomenclatura.</p>
+
+<p>Cada terminal es totalmente independiente de las demás, en cuanto a procesos que corren en ellas. La principal ventaja de tmux es la organización y productividad que ganas una vez aprendes a utilizar esta herramienta, ya que todas las funciones se pueden aplicar haciendo uso del teclado y todo lo visualizas en una única ventana de la que dispones de una sesión con diferentes ventanas y dentro de estas los diferentes paneles.</p>
+
+<p>De esta manera, cuando estamos trabajando en un proyecto en el que se necesita hacer uso de varias terminales, sin tmux tendríamos cada terminal dispersa con su correspondiente ventana y para moverse entre ellas es un caos. En cambio, con tmux podemos tener diferentes espacios de trabajo con las terminales que deseemos y para movernos entre estas es mucho más sencillo.</p>
+
+<p>Para que me entendáis mejor y visualicéis el uso de tmux, aquí os dejo un breve video:</p>
+
+<div class="video-container">
+    <video autoplay="" muted="" controls="" allowfullscreen="" frameborder="0">
+        <source src="/assets/images/como-hacer-uso-tmux/uso_tmux.mp4" type="video/mp4" />
+    </video>
+</div>
+
+<h2 id="instalación">Instalación</h2>
+
+<h3 id="tmux">tmux</h3>
+
+<p>Para instalar esta herramienta, como cualquier otra, depende del sistema operativo que estés corriendo en tu máquina.</p>
+
+<p>Por aquí os dejo una tabla y un link hacia la documentación oficial de la instalación de <a href="https://github.com/tmux/tmux/wiki/Installing#from-source-tarball">tmux</a>, por si deseáis consultar algo:</p>
+
+<table role="table">
+    <thead>
+        <tr>
+            <th>Platform</th>
+            <th>Install Command</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Arch Linux</td>
+            <td><code>pacman -S tmux</code></td>
+        </tr>
+        <tr>
+            <td>Debian or Ubuntu</td>
+            <td><code>apt install tmux</code></td>
+        </tr>
+        <tr>
+            <td>Fedora</td>
+            <td><code>dnf install tmux</code></td>
+        </tr>
+        <tr>
+            <td>RHEL or CentOS</td>
+            <td><code>yum install tmux</code></td>
+        </tr>
+        <tr>
+            <td>macOS (using Homebrew</td>
+            <td><code>brew install tmux</code></td>
+        </tr>
+        <tr>
+            <td>macOS (using MacPorts)</td>
+            <td><code>port install tmux</code></td>
+        </tr>
+        <tr>
+            <td>openSUSE</td>
+            <td><code>zypper install tmux</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="tema">Tema</h3>
+
+<p>El tema del que yo dispongo, visto previamente en el video, se denomina <a href="https://github.com/gpakosz/.tmux"><code class="language-plaintext highlighter-rouge">Oh my tmux</code></a>.</p>
+
+<p>Si deseáis tenerlo, únicamente debéis ejecutar los siguientes comandos desde el home de usuario <code class="language-plaintext highlighter-rouge">cd ~</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/gpakosz/.tmux.git
+<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> <span class="nt">-f</span> .tmux/.tmux.conf
+<span class="nv">$ </span><span class="nb">cp</span> .tmux/.tmux.conf.local <span class="nb">.</span>
+</code></pre></div></div>
+
+<h2 id="shortcuts">Shortcuts</h2>
+<p>Una vez explicado como instalar tmux y sus ventajas, voy a explicar los shortcuts más usados para que podáis utilizar esta fantástica herramienta como nadie hasta ahora.</p>
+
+<p>La gestión y nomenclatura de tmux es la siguiente:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Session</code> - Cada sesión de tmux
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Windows</code> - Dentro de esta están los paneles (panels)
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">Panels</code> - Cada terminal dentro de una ventana (windows)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="prefix">Prefix</h3>
+<p>Shortcut definido para posteriormente aplicar los demás shortcuts.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Ctrl + b</code> ➔ Prefix</p>
+
+<h3 id="modo-ratón">Modo ratón</h3>
+<p>Este modo permite configurar la ventana activa, el panel activo, cambiar el tamaño de los paneles y cambia automáticamente al modo de copia para seleccionar texto.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Prefix + m</code> ➔ Activa el modo ratón</p>
+
+<div align="center">
+    <img src="/assets/images/como-hacer-uso-tmux/mouse_mode.gif" />
+</div>
+
+<h3 id="session">Session</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">tmux new-session -s &lt;name&gt;</code> ➔ Crear sesión con el nombre de esta</li>
+  <li><code class="language-plaintext highlighter-rouge">tmux ls</code> or <code class="language-plaintext highlighter-rouge">tmux list-sessions</code> ➔ Listar las sesiones</li>
+  <li><code class="language-plaintext highlighter-rouge">tmux a -t &lt;name&gt;</code> or <code class="language-plaintext highlighter-rouge">tmux attach -t &lt;name&gt;</code> ➔ Abrir una sesión que esté en segundo plano</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">tmux kill-session -t &lt;name&gt;</code> ➔ Matar una sesión</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Prefix + $</code> ➔ Cambiar el nombre</li>
+  <li><code class="language-plaintext highlighter-rouge">Prefix + d</code> ➔ Establece la sesión en segundo plano, sigue corriendo todo lo que hayas dejado en las terminales de esa sesión</li>
+  <li><code class="language-plaintext highlighter-rouge">Prefix + s</code> ➔ Vista general de las sesiones</li>
+  <li><code class="language-plaintext highlighter-rouge">Prefix + w</code> ➔ Vista general con jerarquía - Lista las sesiones con sus respectivas ventanas y paneles</li>
+</ul>
+
+<h3 id="windown">Windown</h3>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + c</code> ➔ Crear</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + &amp;</code> ➔ Cerrar</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + ,</code> ➔ Cambiar nombre</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + {1, 2, 3...}</code> ➔ Cambiar entre ventanas</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + '+'</code> ➔ Mover un panel a una nueva ventana</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + :</code> + <code class="language-plaintext highlighter-rouge">:swap-window -s &lt;origen&gt; -t &lt;destino&gt;</code> ➔ Cambiar ventanas de posición</p>
+  </li>
+</ul>
+
+<h3 id="panel">Panel</h3>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + x</code> ➔ Cerrar</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + "</code> ➔ Dividir horizontalmente</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + %</code> ➔ Dividir verticalmente</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + space</code> ➔ Cambiar orientación vertical u horizontal</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + H</code> (izquierda) , <code class="language-plaintext highlighter-rouge">J</code> (abajo) , <code class="language-plaintext highlighter-rouge">K</code> (arriba) , <code class="language-plaintext highlighter-rouge">L</code> (derecha) ➔ Redimensionar panel</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + arrowkeys</code> ➔ Moverse de en un panel u otro según las flechas</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + o</code> ➔ Moverse sentido agujas del reloj</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + { or }</code> ➔ Cambiar contenido entre paneles</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + ctrl + o</code> ➔ Cambiar contenido, rotación sentido contrario agujas del reloj</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + z</code> ➔ Maximizar el panel</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + t</code> ➔ Muestra la hora en el panel seleccionado</p>
+  </li>
+</ul>
+
+<h4 id="modo-copia-y-modo-selección">Modo copia y Modo selección</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + [</code> ➔ Acceder al modo copia</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Ctrl + space</code> ➔ Acceder modo selección (se debe estar previamente en el modo copia)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Alt + w</code> ➔ Copiar</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Prefix + ]</code> ➔ Pegar lo previamente copiado</p>
+  </li>
+</ul>
+
+        
+        <!-- Boton de volver arriba -->
+        <br>
+        <a href="#page-title" class="back-to-top">Volver arriba &uarr;</a>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#terminal" class="page__taxonomy-item p-category" rel="tag">terminal</a><span class="sep">, </span>
+    
+      <a href="/tags/#tmux" class="page__taxonomy-item p-category" rel="tag">tmux</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categorías: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#customizaci%C3%B3n" class="page__taxonomy-item p-category" rel="tag">Customización</a><span class="sep">, </span>
+    
+      <a href="/categories/#entorno-de-trabajo" class="page__taxonomy-item p-category" rel="tag">Entorno de trabajo</a><span class="sep">, </span>
+    
+      <a href="/categories/#herramientas" class="page__taxonomy-item p-category" rel="tag">Herramientas</a><span class="sep">, </span>
+    
+      <a href="/categories/#linux" class="page__taxonomy-item p-category" rel="tag">Linux</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time class="dt-published" datetime="2021-08-20T00:00:00+02:00">August 20, 2021</time></p>
+
+      </footer>
+      
+      <!--  -->
+
+      
+  <nav class="pagination">
+    
+      <a href="/entorno-profesional-trabajo-linux-bspwm/" class="pagination--pager" title="Entorno profesional de trabajo en linux - bspwm
+">..</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+  
+
+  
+  
+</div>
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <!-- <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div> -->
+
+<div class="page__footer-copyright" align="center">&copy; January 2022 | Sh4rkside | Escrito por SrBellver</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

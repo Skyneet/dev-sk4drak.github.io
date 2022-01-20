@@ -1,0 +1,24 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  
+  - title: "Artículos"
+    url: "/year-archive/"
+
+  - title: "Categorías"
+    url: /categories/
+
+  - title: "Etiquetas"
+    url: "/tags/"
+
+  - title: "Sobre mí"
+    url: /aboutme/
+  
+  - title: "Buscador"
+    url: /search/
+
+  #- title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/

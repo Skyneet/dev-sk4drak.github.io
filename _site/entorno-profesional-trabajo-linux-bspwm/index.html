@@ -1,0 +1,2468 @@
+<!doctype html>
+
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Entorno profesional de trabajo en linux - bspwm | sh4rkside</title>
+<meta name="description" content="¿Te gustaría disponer de un entorno profesional de trabajo en linux, para ser más productivo y contar con más rendimiento en tus proyectos? Entra aqui. ¡Este es tu artículo!">
+
+
+  <meta name="author" content="SrBellver">
+  
+  <meta property="article:author" content="SrBellver">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="sh4rkside">
+<meta property="og:title" content="Entorno profesional de trabajo en linux - bspwm">
+<meta property="og:url" content="http://localhost:4000/entorno-profesional-trabajo-linux-bspwm/">
+
+
+  <meta property="og:description" content="¿Te gustaría disponer de un entorno profesional de trabajo en linux, para ser más productivo y contar con más rendimiento en tus proyectos? Entra aqui. ¡Este es tu artículo!">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/entorno-trabajo-profesional-bspwm/entorno2.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-08-01T00:00:00+02:00">
+
+
+
+  <meta property="article:modified_time" content="2021-08-12T00:00:00+02:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/entorno-profesional-trabajo-linux-bspwm/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sh4rkside",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="sh4rkside Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo/banner.png" alt=" "></a>
+        
+        <a class="site-title" href="/">
+           
+          
+        </a>
+        <ul class="visible-links">
+            
+              <li class="masthead__menu-item">
+                <a href="/">Home</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/year-archive/">Artículos</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/categories/">Categorías</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/tags/">Etiquetas</a>
+              </li>
+            
+            
+              <li class="masthead__menu-item">
+                <a href="/aboutme/">Sobre mí</a>
+              </li>
+            
+              <li class="masthead__menu-item">
+                <a href="/search/"><i class="fas fa-search" style="color:red"></i></a>
+              </li>
+            
+            </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+    
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Entorno profesional de trabajo en linux - bspwm</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar" >
+      <!-- <a href="http://localhost:4000/">
+        <img src="/assets/images/avatar.jpg" alt="SrBellver" itemprop="image" class="u-photo">
+      </a> -->
+      <img src="/assets/images/avatar.jpg" alt="SrBellver" itemprop="image" class="u-photo">
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <!-- <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">SrBellver</a> -->
+      SrBellver
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Administrador de sistemas en <strong>Hadoq</strong> <br />FPGS - ASIR / PCAP / WEHC / M4H</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <a href="https://goo.gl/maps/ZEB51426pFEfrJyM9" rel="nofollow noopener noreferrer" target="blank">
+            <i class="fas fa-location-arrow fa-lg" aria-hidden="true"></i><span itemprop="name" class="p-locality">&nbsp;&nbsp;España</span>
+          </a>
+          </li>
+      
+
+      
+        
+          <!-- Para que no muestre enlace en el texto del correo, elimino etiqueta href (no rederigia a ningun lado, estaba mal). Lo identifico con la varibale link.icon-->
+          
+          <li><i class="fas fa-envelope fa-lg" aria-hidden="true"></i><span class="label">&nbsp; adrian.bellver.a@gmail.com</span></a></li>
+          
+                    
+        
+          <!-- Para que no muestre enlace en el texto del correo, elimino etiqueta href (no rederigia a ningun lado, estaba mal). Lo identifico con la varibale link.icon-->
+          
+          
+            <li><a href="https://www.linkedin.com/in/adri%C3%A1n-bellver-%C3%A1vila/" rel="nofollow noopener noreferrer" target="blank"><i class="fab fa-linkedin-in fa-lg" aria-hidden="true"></i><span class="label">&nbsp;&nbsp;Linkedin</span></a></li>
+                    
+        
+          <!-- Para que no muestre enlace en el texto del correo, elimino etiqueta href (no rederigia a ningun lado, estaba mal). Lo identifico con la varibale link.icon-->
+          
+          
+            <li><a href="https://github.com/sh4rkside" rel="nofollow noopener noreferrer" target="blank"><i class="fab fa-github-alt fa-lg" aria-hidden="true"></i><span class="label">&nbsp;&nbsp;GitHub</span></a></li>
+                    
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Entorno profesional de trabajo en linux - bspwm">
+    <meta itemprop="description" content="¿Te gustaría disponer de un entorno profesional de trabajo en linux, para ser más productivo y contar con más rendimiento en tus proyectos? Entra aqui. ¡Este es tu artículo!">
+    <meta itemprop="datePublished" content="2021-08-01T00:00:00+02:00">
+    <meta itemprop="dateModified" content="2021-08-12T00:00:00+02:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a class="u-url" itemprop="url">Entorno profesional de trabajo en linux - bspwm
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+        
+        <time datetime="2021-08-01T00:00:00+02:00">August 1, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title" style="background: #b94747"}><i class="fas fa-file-alt"></i> &#10148; Entorno de trabajo - bspwm</h4></header>
+              <ul class="toc__menu"><li><a href="#bspwm">bspwm</a><ul><li><a href="#archivo-bspwmrc">Archivo bspwmrc</a></li><li><a href="#archivo-bspwm_monitors">Archivo bspwm_monitors</a></li></ul></li><li><a href="#sxhkd">sxhkd</a><ul><li><a href="#archivo-sxhkdrc">Archivo sxhkdrc</a></li><li><a href="#archivo-bspwm_resize">Archivo bspwm_resize</a></li></ul></li><li><a href="#picom">picom</a><ul><li><a href="#archivo-picomconf">Archivo picom.conf</a></li></ul></li><li><a href="#rofi">rofi</a><ul><li><a href="#archivo-configrasi">Archivo config.rasi</a></li><li><a href="#menú-powermenu">Menú powermenu</a><ul><li><a href="#powermenush">powermenu.sh</a></li><li><a href="#settingrasi">setting.rasi</a></li><li><a href="#confirmrasi">confirm.rasi</a></li></ul></li></ul></li><li><a href="#polybar">polybar</a><ul><li><a href="#archivo-launchsh">Archivo launch.sh</a></li><li><a href="#archivo-config">Archivo config</a></li><li><a href="#archivo-pulseaudio-control">Archivo pulseaudio-control</a></li></ul></li><li><a href="#terminal">Terminal</a><ul><li><a href="#archivo-zshrc">Archivo .zshrc</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+          <br>
+        
+        <p>En este artículo os muestro y comparto mis archivos de configuración para la creación de un entorno profesional de trabajo mediante un administrador de ventanas tipo mosaico ➔ <code class="language-plaintext highlighter-rouge">bspwm</code>.</p>
+
+<p>En primer lugar voy a dejar las especificaciones de mi sistema operativo y algunas imágenes del entorno profesional de trabajo en linux:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>❯ <span class="nb">uname</span> <span class="nt">-a</span>
+Linux AERO 5.8.0-63-generic <span class="c">#71~20.04.1-Ubuntu SMP Thu Jul 15 17:46:08 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span>
+
+❯ lsb_release <span class="nt">-a</span>
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.2 LTS
+Release:	20.04
+Codename:	focal
+</code></pre></div></div>
+
+<p><img src="/assets/images/entorno-trabajo-profesional-bspwm/entorno1.png" alt="" /></p>
+
+<p><img src="/assets/images/entorno-trabajo-profesional-bspwm/entorno2.png" alt="" /></p>
+
+<p><img src="/assets/images/entorno-trabajo-profesional-bspwm/entorno3.png" alt="" /></p>
+
+<p>Una vez visto, os voy a compartir los archivos de configuración necesarios para que podáis crearos este entorno tan chulo y hacer uso de él.</p>
+
+<h2 id="bspwm">bspwm</h2>
+<p><a href="https://github.com/baskerville/bspwm">bspwm</a> es un gestor de ventanas tipo mosaico que organiza las ventanas basándose en particiones de espacio binario. Tiene soporte para múltiples monitores.</p>
+
+<h3 id="archivo-bspwmrc">Archivo bspwmrc</h3>
+<p>Este es el archivo de configuración que se ejecuta cada vez que se inicia sesión con el administrador de ventanas <code class="language-plaintext highlighter-rouge">bspwm</code>.</p>
+
+<p>Para volver a ejecutarlo una vez que ya hayas iniciado sesión (por si has hecho alguna modificación), no hace falta cerrar sesión y volver a abrir sesión. Con presionar a la vez <code class="language-plaintext highlighter-rouge">super+alt+r</code> se reiniciará y se harán efecto las nuevas modificaciones.</p>
+
+<p>Situado en el directorio <code class="language-plaintext highlighter-rouge">~/.config/bspwm/</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+
+pgrep <span class="nt">-x</span> sxhkd <span class="o">&gt;</span> /dev/null <span class="o">||</span> sxhkd &amp;
+
+<span class="c"># Workspace - Monitors (unicamente si dispones de monitores externos)</span>
+<span class="nv">num_monitor</span><span class="o">=</span><span class="si">$(</span>xrandr <span class="nt">--query</span> | <span class="nb">grep</span> <span class="nt">-w</span> connected | <span class="nb">wc</span> <span class="nt">-l</span><span class="si">)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$num_monitor</span> <span class="o">=</span> 3 <span class="o">]</span><span class="p">;</span><span class="k">then
+  </span>bspwm_monitors 3 &amp;
+  bspc monitor eDP-1 <span class="nt">-d</span> I II III
+  bspc monitor DP-1 <span class="nt">-d</span> IV V VI
+  bspc monitor HDMI-1-0 <span class="nt">-d</span> VII VIII IX X
+<span class="k">elif</span> <span class="o">[</span> <span class="nv">$num_monitor</span> <span class="o">=</span> 2 <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span>bspwm_monitors 2 &amp;
+  bspc monitor eDP-1 <span class="nt">-d</span> I II III IV V
+  bspc monitor DP-1 <span class="nt">-d</span> VI VII VIII IX X
+<span class="k">elif</span> <span class="o">[</span> <span class="nv">$num_monitor</span> <span class="o">=</span> 1 <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span>bspwm_monitors 1 &amp;
+  bspc monitor eDP-1 <span class="nt">-d</span> I II III IV V VI VII VIII IX X
+<span class="k">fi</span>
+
+<span class="c"># Descomentar si no dispones de monitores externos</span>
+<span class="c"># bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X</span>
+
+wmname LG3D
+xsetroot <span class="nt">-cursor_name</span> left_ptr &amp;
+feh <span class="nt">--bg-fill</span> /usr/share/backgrounds/arch_linux.png &amp;
+<span class="nv">$HOME</span>/.config/polybar/launch.sh &amp;
+
+bspc config pointer_modifier mod1
+bspc config focus_follows_pointer <span class="nb">true
+
+</span>bspc config border_width         2
+bspc config window_gap          10
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   <span class="nb">true
+</span>bspc config gapless_monocle      <span class="nb">true</span>
+
+<span class="c"># Border colors</span>
+bspc config focused_border_color <span class="s2">"#668bd7"</span>
+
+<span class="c"># Rules</span>
+bspc rule <span class="nt">-a</span> Org.gnome.Nautilus <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
+bspc rule <span class="nt">-a</span> nm-applet <span class="nv">state</span><span class="o">=</span>floating
+bspc rule <span class="nt">-a</span> Blueman-manager <span class="nv">state</span><span class="o">=</span>floating
+bspc rule <span class="nt">-a</span> Pavucontrol <span class="nv">state</span><span class="o">=</span>floating
+bspc rule <span class="nt">-a</span> Eog <span class="nv">state</span><span class="o">=</span>floating
+bscp rule <span class="nt">-a</span> gnome-calculator <span class="nv">state</span><span class="o">=</span>floating
+bspc rule <span class="nt">-a</span> file-roller <span class="nv">state</span><span class="o">=</span>floating
+
+<span class="c"># ==================================</span>
+<span class="c">#               xinput</span>
+<span class="c"># ==================================</span>
+<span class="c"># Establecimiento de los botones del touchpad</span>
+<span class="c">#libinput Tapping Enabled (354)</span>
+xinput set-prop <span class="s2">"FTCS1000:00 2808:0101 Touchpad"</span> 354 1
+<span class="c">#libinput Middle Emulation Enabled (341)</span>
+xinput set-prop <span class="s2">"FTCS1000:00 2808:0101 Touchpad"</span> 341 1
+<span class="c">#libinput Natural Scrolling Enabled (334)</span>
+xinput set-prop <span class="s2">"FTCS1000:00 2808:0101 Touchpad"</span> 334 1
+
+<span class="c"># ==================================</span>
+<span class="c">#           Running Apps</span>
+<span class="c"># ==================================</span>
+<span class="c"># Show window for run gui programs as root</span>
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &amp;
+
+killall nm-applet 2&gt; /dev/null
+nm-applet &amp;
+
+<span class="c"># blueman-applet</span>
+killall blueman-applet 2&gt; /dev/null
+blueman-applet &amp;
+
+<span class="c">#picom</span>
+killall picom 2&gt; /dev/null
+picom <span class="nt">--experimental-backends</span> &amp;
+
+<span class="c"># Dropbox</span>
+<span class="nv">num_pid_dropbox</span><span class="o">=</span><span class="si">$(</span>pgrep <span class="nt">-x</span> dropbox | <span class="nb">wc</span> <span class="nt">-l</span><span class="si">)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$num_pid_dropbox</span> <span class="o">=</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+	</span>dropbox start &amp;
+<span class="k">fi
+
+</span>paplay /usr/share/sounds/Yaru/stereo/system-ready.oga <span class="nt">--volume</span><span class="o">=</span>30000 &amp;
+</code></pre></div></div>
+<h3 id="archivo-bspwm_monitors">Archivo bspwm_monitors</h3>
+<p>Establece las características <code class="language-plaintext highlighter-rouge">resolución</code>, <code class="language-plaintext highlighter-rouge">rotación</code>, <code class="language-plaintext highlighter-rouge">hz</code>, <code class="language-plaintext highlighter-rouge">prioridad</code> y <code class="language-plaintext highlighter-rouge">posición</code> de las pantallas (tanto la integrada, en el caso de portátiles, como las externas)</p>
+
+<blockquote>
+  <p>IMPORTANTE: Modificar el contenido del archivo de tal manera.</p>
+  <ul>
+    <li>Debes verificar el número de monitores y sus nombres <code class="language-plaintext highlighter-rouge">xrandr --query | grep connected</code></li>
+    <li>Te ayudará el conocer el uso de la herramienta <a href="https://explainshell.com/explain/1/xrandr"><code class="language-plaintext highlighter-rouge">xrandr</code></a></li>
+  </ul>
+</blockquote>
+
+<p>Este es el archivo de configuración, debe estar situado en un directorio al que tenga acceso la variable de entorno <code class="language-plaintext highlighter-rouge">PATH</code>. Para que así sin problema alguno, desde el fichero <a href="#archivo-bspwmrc"><code class="language-plaintext highlighter-rouge">bspwmrc</code></a> se pueda llamar al ejecutable <code class="language-plaintext highlighter-rouge">bspwm_monitors</code> junto con su respectivo argumento <code class="language-plaintext highlighter-rouge">1, 2 o 3</code>.</p>
+
+<p>En mi caso elegí el directorio donde establezco mis propios ejecutables <code class="language-plaintext highlighter-rouge">~/.local/bin/</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c">#  ____  _   _ _  _   ____  _  ______ ___ ____  _____ </span>
+<span class="c"># / ___|| | | | || | |  _ \| |/ / ___|_ _|  _ \| ____|</span>
+<span class="c"># \___ \| |_| | || |_| |_) | ' /\___ \| || | | |  _|  </span>
+<span class="c">#  ___) |  _  |__   _|  _ &lt;| . \ ___) | || |_| | |___ </span>
+<span class="c"># |____/|_| |_|  |_| |_| \_\_|\_\____/___|____/|_____|	</span>
+<span class="c">#</span>
+<span class="c"># Created by Sh4rkside</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="nv">$1</span> <span class="o">=</span> 3 <span class="o">]]</span><span class="p">;</span> <span class="k">then
+	</span>xrandr <span class="nt">--output</span> eDP-1 <span class="nt">--mode</span> 1920x1080 <span class="nt">--rotate</span> normal <span class="nt">--rate</span> 144.00 <span class="nt">--output</span> DP-1 <span class="nt">--primary</span> <span class="nt">--mode</span> 2560x1440 <span class="nt">--rotate</span> normal <span class="nt">--rate</span> 144.00 <span class="nt">--right-of</span> eDP-1 <span class="nt">--output</span> HDMI-1-0 <span class="nt">--mode</span> 1920x1080 <span class="nt">--rotate</span> normal <span class="nt">--rate</span> 60.00 <span class="nt">--right-of</span> DP-1
+<span class="k">elif</span> <span class="o">[[</span> <span class="nv">$1</span> <span class="o">=</span> 2 <span class="o">]]</span><span class="p">;</span> <span class="k">then
+	</span>xrandr <span class="nt">--output</span> eDP-1 <span class="nt">--mode</span> 1920x1080 <span class="nt">--rotate</span> normal <span class="nt">--rate</span> 144.00 <span class="nt">--output</span> DP-1 <span class="nt">--primary</span> <span class="nt">--mode</span> 2560x1440 <span class="nt">--rotate</span> normal <span class="nt">--rate</span> 144.00 <span class="nt">--right-of</span> eDP-1
+<span class="k">elif</span> <span class="o">[[</span> <span class="nv">$1</span> <span class="o">=</span> 1 <span class="o">]]</span><span class="p">;</span> <span class="k">then
+	</span>xrandr <span class="nt">--output</span> eDP-1 <span class="nt">--mode</span> 1920x1080 <span class="nt">--rotate</span> normal <span class="nt">--rate</span> 144.00 <span class="nt">--primary</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<h2 id="sxhkd">sxhkd</h2>
+<p><a href="https://github.com/baskerville/sxhkd">sxhkd</a> es un demonio de teclas de acceso directo para <a href="https://wiki.archlinux.org/title/Xorg_(Espa%C3%B1ol)">X</a>, que reacciona a los eventos de entrada ejecutando comandos.</p>
+
+<h3 id="archivo-sxhkdrc">Archivo sxhkdrc</h3>
+<p>Este es el archivo de configuración que determina la relación entre las teclas de acceso directo junto con el comando a ejecutar.</p>
+
+<p>Situado en el directorio <code class="language-plaintext highlighter-rouge">~/.config/sxhkd</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#</span>
+<span class="c"># wm independent hotkeys</span>
+<span class="c">#</span>
+
+<span class="c"># terminal emulator</span>
+super + Return
+	gnome-terminal
+
+<span class="c"># program launcher - rofi</span>
+super + @space
+	rofi <span class="nt">-show</span> drun <span class="nt">-show-icons</span>
+	
+super + ctrl + @space
+	rofi <span class="nt">-show</span> run
+
+<span class="c"># make sxhkd reload its configuration files:</span>
+super + Escape
+	pkill <span class="nt">-USR1</span> <span class="nt">-x</span> sxhkd
+
+<span class="c">#</span>
+<span class="c"># bspwm hotkeys</span>
+<span class="c">#</span>
+
+<span class="c"># quit/restart bspwm</span>
+super + alt + <span class="o">{</span>q,r<span class="o">}</span>
+	bspc <span class="o">{</span>quit,wm <span class="nt">-r</span><span class="o">}</span>
+
+<span class="c"># close and kill</span>
+super + <span class="o">{</span>_,shift + <span class="o">}</span>w
+	bspc node -<span class="o">{</span>c,k<span class="o">}</span>
+
+<span class="c"># alternate between the tiled and monocle layout</span>
+super + m
+	bspc desktop <span class="nt">-l</span> next
+
+<span class="c"># send the newest marked node to the newest preselected node</span>
+super + y
+	bspc node newest.marked.local <span class="nt">-n</span> newest.!automatic.local
+
+<span class="c"># swap the current node and the biggest window</span>
+super + g
+	bspc node <span class="nt">-s</span> biggest.window
+
+<span class="c">#</span>
+<span class="c"># state/flags</span>
+<span class="c">#</span>
+
+<span class="c"># set the window state</span>
+super + <span class="o">{</span>t,shift + t,s,f<span class="o">}</span>
+	bspc node <span class="nt">-t</span> <span class="o">{</span>tiled,pseudo_tiled,floating,fullscreen<span class="o">}</span>
+
+<span class="c"># set the node flags</span>
+super + ctrl + <span class="o">{</span>m,x,y,z<span class="o">}</span>
+	bspc node <span class="nt">-g</span> <span class="o">{</span>marked,locked,sticky,private<span class="o">}</span>
+
+<span class="c">#</span>
+<span class="c"># focus/swap</span>
+<span class="c">#</span>
+
+<span class="c"># focus the node in the given direction</span>
+super + <span class="o">{</span>_,shift + <span class="o">}{</span>Left,Down,Up,Right<span class="o">}</span>
+       bspc node -<span class="o">{</span>f,s<span class="o">}</span> <span class="o">{</span>west,south,north,east<span class="o">}</span>
+
+<span class="c"># focus the node for the given path jump</span>
+super + <span class="o">{</span>p,b,comma,period<span class="o">}</span>
+	bspc node <span class="nt">-f</span> @<span class="o">{</span>parent,brother,first,second<span class="o">}</span>
+
+<span class="c"># focus the next/previous window in the current desktop</span>
+super + <span class="o">{</span>_,shift + <span class="o">}</span>c
+	bspc node <span class="nt">-f</span> <span class="o">{</span>next,prev<span class="o">}</span>.local.!hidden.window
+
+<span class="c"># focus the next/previous desktop in the current monitor</span>
+super + bracket<span class="o">{</span>left,right<span class="o">}</span>
+	bspc desktop <span class="nt">-f</span> <span class="o">{</span>prev,next<span class="o">}</span>.local
+
+<span class="c"># focus the last node/desktop</span>
+super + <span class="o">{</span>grave,Tab<span class="o">}</span>
+	bspc <span class="o">{</span>node,desktop<span class="o">}</span> <span class="nt">-f</span> last
+
+<span class="c"># focus the older or newer node in the focus history</span>
+super + <span class="o">{</span>o,i<span class="o">}</span>
+	bspc wm <span class="nt">-h</span> off<span class="p">;</span> <span class="se">\</span>
+	bspc node <span class="o">{</span>older,newer<span class="o">}</span> <span class="nt">-f</span><span class="p">;</span> <span class="se">\</span>
+	bspc wm <span class="nt">-h</span> on
+
+<span class="c"># focus or send to the given desktop</span>
+super + <span class="o">{</span>_,shift + <span class="o">}{</span>1-9,0<span class="o">}</span>
+	bspc <span class="o">{</span>desktop <span class="nt">-f</span>,node <span class="nt">-d</span><span class="o">}</span> <span class="s1">'^{1-9,10}'</span>
+
+<span class="c">#</span>
+<span class="c"># preselect</span>
+<span class="c">#</span>
+
+<span class="c"># preselect the direction</span>
+super + ctrl + alt + <span class="o">{</span>Left,Down,Up,Right<span class="o">}</span>
+	bspc node <span class="nt">-p</span> <span class="o">{</span>west,south,north,east<span class="o">}</span>
+
+<span class="c"># preselect the ratio</span>
+super + ctrl + <span class="o">{</span>1-9<span class="o">}</span>
+	bspc node <span class="nt">-o</span> 0.<span class="o">{</span>1-9<span class="o">}</span>
+
+<span class="c"># cancel the preselection for the focused node</span>
+super + ctrl + space
+	bspc node <span class="nt">-p</span> cancel
+
+<span class="c"># cancel the preselection for the focused desktop</span>
+super + ctrl + <span class="nb">shift</span> + space
+	bspc query <span class="nt">-N</span> <span class="nt">-d</span> | xargs <span class="nt">-I</span> <span class="nb">id</span> <span class="nt">-n</span> 1 bspc node <span class="nb">id</span> <span class="nt">-p</span> cancel
+
+<span class="c">#</span>
+<span class="c"># move/resize</span>
+<span class="c">#</span>
+
+<span class="c"># move a floating window</span>
+super + ctrl + <span class="o">{</span>Left,Down,Up,Right<span class="o">}</span>
+	bspc node <span class="nt">-v</span> <span class="o">{</span><span class="nt">-20</span> 0,0 20,0 <span class="nt">-20</span>,20 0<span class="o">}</span>
+
+<span class="c"># Custom move/resize</span>
+alt + super + <span class="o">{</span>Left,Down,Up,Right<span class="o">}</span>
+	/home/adrianbellver/.config/bspwm/scripts/bspwm_resize <span class="o">{</span>west,south,north,east<span class="o">}</span>
+
+
+<span class="c"># =================================================================</span>
+<span class="c"># 				CUSTOM</span>
+<span class="c"># ==================================================================</span>
+
+<span class="c"># Google Chrome</span>
+super + <span class="nb">shift</span> + g
+	google-chrome-stable
+
+<span class="c"># Firefox</span>
+super + <span class="nb">shift</span> + f
+	firefox
+
+<span class="c"># Files - Gnome</span>
+super + <span class="nb">shift</span> + e
+	nautilus
+
+<span class="c"># Files - Ranger</span>
+super + ctrl + e
+	gnome-terminal <span class="nt">-e</span> <span class="s1">'ranger'</span>
+
+<span class="c"># Captura de pantalla</span>
+super + <span class="nb">shift</span> + s
+	flameshot gui
+
+<span class="c"># Bpytop</span>
+super + <span class="nb">shift</span> + b
+	gnome-terminal <span class="nt">-e</span> <span class="s1">'bpytop'</span>
+
+<span class="c"># Lockscreen</span>
+super + l
+	betterlockscreen <span class="nt">-l</span> dimblur <span class="nt">-tf</span> <span class="s2">"%H:%M"</span> <span class="nt">-t</span> <span class="s2">"    Type password to unlock..."</span>
+
+<span class="c"># Ambient display</span>
+super + <span class="nb">shift</span> + l
+	gnome-terminal <span class="nt">-e</span> <span class="s1">'unimatrix -c magenta'</span>
+
+<span class="c"># &gt; 20% brightnessctl</span>
+ctrl + alt + m
+	brightnessctl <span class="nt">-dintel_backlight</span> <span class="nb">set</span> +10%
+
+<span class="c"># &lt; 20% brightnessctl</span>
+ctrl + alt + n
+	brightnessctl <span class="nt">-dintel_backlight</span> <span class="nb">set </span>10%-
+</code></pre></div></div>
+
+<h3 id="archivo-bspwm_resize">Archivo bspwm_resize</h3>
+<p>Este es el archivo de configuración que determina el redimensionamiento de las ventanas que están en modo flotante. Está situado en el directorio <code class="language-plaintext highlighter-rouge">~/.config/bspwm/scripts</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env dash</span>
+
+<span class="k">if </span>bspc query <span class="nt">-N</span> <span class="nt">-n</span> focused.floating <span class="o">&gt;</span> /dev/null<span class="p">;</span> <span class="k">then
+	</span><span class="nv">step</span><span class="o">=</span>20
+<span class="k">else
+	</span><span class="nv">step</span><span class="o">=</span>100
+<span class="k">fi
+
+case</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="k">in
+	</span>west<span class="p">)</span> <span class="nb">dir</span><span class="o">=</span>right<span class="p">;</span> <span class="nv">falldir</span><span class="o">=</span>left<span class="p">;</span> <span class="nv">x</span><span class="o">=</span><span class="s2">"-</span><span class="nv">$step</span><span class="s2">"</span><span class="p">;</span> <span class="nv">y</span><span class="o">=</span>0<span class="p">;;</span>
+	east<span class="p">)</span> <span class="nb">dir</span><span class="o">=</span>right<span class="p">;</span> <span class="nv">falldir</span><span class="o">=</span>left<span class="p">;</span> <span class="nv">x</span><span class="o">=</span><span class="s2">"</span><span class="nv">$step</span><span class="s2">"</span><span class="p">;</span> <span class="nv">y</span><span class="o">=</span>0<span class="p">;;</span>
+	north<span class="p">)</span> <span class="nb">dir</span><span class="o">=</span>top<span class="p">;</span> <span class="nv">falldir</span><span class="o">=</span>bottom<span class="p">;</span> <span class="nv">x</span><span class="o">=</span>0<span class="p">;</span> <span class="nv">y</span><span class="o">=</span><span class="s2">"-</span><span class="nv">$step</span><span class="s2">"</span><span class="p">;;</span>
+	south<span class="p">)</span> <span class="nb">dir</span><span class="o">=</span>top<span class="p">;</span> <span class="nv">falldir</span><span class="o">=</span>bottom<span class="p">;</span> <span class="nv">x</span><span class="o">=</span>0<span class="p">;</span> <span class="nv">y</span><span class="o">=</span><span class="s2">"</span><span class="nv">$step</span><span class="s2">"</span><span class="p">;;</span>
+<span class="k">esac</span>
+
+bspc node <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$dir</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$x</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$y</span><span class="s2">"</span> <span class="o">||</span> bspc node <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$falldir</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$x</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$y</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<h2 id="picom">picom</h2>
+<p><a href="https://github.com/yshui/picom">picom</a> es un compositor independiente para Xorg, adecuado para su utilización con administradores de ventanas que no proporcionan composición como es el caso de <code class="language-plaintext highlighter-rouge">bspwm</code>.</p>
+
+<h3 id="archivo-picomconf">Archivo picom.conf</h3>
+<p>Este es el archivo de configuración situado en el directorio <code class="language-plaintext highlighter-rouge">~/.config/picom</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#################################</span>
+<span class="c">#             Shadows           #</span>
+<span class="c">#################################</span>
+shadow <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+shadow-radius <span class="o">=</span> 7<span class="p">;</span>
+shadow-offset-x <span class="o">=</span> <span class="nt">-7</span><span class="p">;</span>
+shadow-offset-y <span class="o">=</span> <span class="nt">-7</span><span class="p">;</span>
+
+shadow-exclude <span class="o">=</span> <span class="o">[</span>
+  <span class="s2">"name = 'Notification'"</span>,
+  <span class="s2">"class_g = 'Conky'"</span>,
+  <span class="s2">"class_g ?= 'Notify-osd'"</span>,
+  <span class="s2">"class_g = 'Cairo-clock'"</span>,
+  <span class="s2">"_GTK_FRAME_EXTENTS@:c"</span>
+<span class="o">]</span><span class="p">;</span>
+
+<span class="c">#################################</span>
+<span class="c">#           Fading              #</span>
+<span class="c">#################################</span>
+fading <span class="o">=</span> <span class="nb">true
+</span>fade-in-step <span class="o">=</span> 0.03<span class="p">;</span>
+fade-out-step <span class="o">=</span> 0.03<span class="p">;</span>
+
+<span class="c">#################################</span>
+<span class="c">#   Transparency / Opacity      #</span>
+<span class="c">#################################</span>
+inactive-opacity <span class="o">=</span> 0.95<span class="p">;</span>
+frame-opacity <span class="o">=</span> 0.95<span class="p">;</span>
+inactive-opacity-override <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+active-opacity <span class="o">=</span> 1.0<span class="p">;</span>
+
+focus-exclude <span class="o">=</span> <span class="o">[</span> <span class="s2">"class_g = 'Cairo-clock'"</span> <span class="o">]</span><span class="p">;</span>
+
+opacity-rule <span class="o">=</span> <span class="o">[</span>
+  <span class="s2">"90:class_g = 'Rofi'"</span>,
+  <span class="s2">"80:class_g = 'Nautilus'"</span>,
+  <span class="c">#"100:class_g = 'Google-chrome'",</span>
+  <span class="s2">"100:class_g = 'Firefox'"</span>,
+  <span class="s2">"100:class_g = 'Vmplayer'"</span>,
+  <span class="s2">"100:class_g = 'Eog'"</span>,
+  <span class="s2">"100:name *?= 'i3lock'"</span>,
+  <span class="s2">"100:name *?= 'gnome-screensaver'"</span>,
+  <span class="s2">"100:name *?= 'flameshot'"</span>
+<span class="o">]</span><span class="p">;</span>
+
+<span class="c">#################################</span>
+<span class="c">#       General Settings        #</span>
+<span class="c">#################################</span>
+
+backend <span class="o">=</span> <span class="s2">"xrender"</span><span class="p">;</span>
+vsync <span class="o">=</span> <span class="nb">true
+</span>mark-wmwin-focused <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+mark-ovredir-focused <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+detect-rounded-corners <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+detect-client-opacity <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+refresh-rate <span class="o">=</span> 0
+detect-transient <span class="o">=</span> <span class="nb">true
+</span>detect-client-leader <span class="o">=</span> <span class="nb">true
+</span>use-damage <span class="o">=</span> <span class="nb">true
+</span>log-level <span class="o">=</span> <span class="s2">"warn"</span><span class="p">;</span>
+
+wintypes:
+<span class="o">{</span>
+  tooltip <span class="o">=</span> <span class="o">{</span> fade <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> shadow <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> opacity <span class="o">=</span> 0.75<span class="p">;</span> focus <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> full-shadow <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="o">}</span><span class="p">;</span>
+  dock <span class="o">=</span> <span class="o">{</span> shadow <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="o">}</span>
+  dnd <span class="o">=</span> <span class="o">{</span> shadow <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="o">}</span>
+  popup_menu <span class="o">=</span> <span class="o">{</span> opacity <span class="o">=</span> 0.8<span class="p">;</span> <span class="o">}</span>
+  dropdown_menu <span class="o">=</span> <span class="o">{</span> opacity <span class="o">=</span> 0.8<span class="p">;</span> <span class="o">}</span>
+<span class="o">}</span><span class="p">;</span>
+
+corner-radius <span class="o">=</span> 0<span class="p">;</span>
+rounded-corners-exclude <span class="o">=</span> <span class="o">[</span>
+  <span class="s2">"class_g = 'Polybar'"</span>,
+  <span class="s2">"class_g = 'Google-chrome'"</span>,
+  <span class="s2">"class_g = 'firefox'"</span>
+<span class="o">]</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="rofi">rofi</h2>
+<p><a href="https://github.com/davatorium/rofi">rofi</a> es un selector de ventanas y un lanzador de aplicaciones.</p>
+
+<h3 id="archivo-configrasi">Archivo config.rasi</h3>
+<p>Este es el archivo de configuración que determina el tema que se le aplica a rofi. Se puede importar cualquiera de los temas que se sitúen bajo el directorio <code class="language-plaintext highlighter-rouge">/usr/share/rofi/themes</code>.</p>
+
+<p>Situado en el directorio <code class="language-plaintext highlighter-rouge">~/.config/rofi</code>:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="s1">"/usr/share/rofi/themes/Arc-Dark.rasi"</span>
+</code></pre></div></div>
+
+<h3 id="menú-powermenu">Menú powermenu</h3>
+<hr />
+
+<p>Menú funcional para llevar acabo la automatización de varias tareas, en concreto <code class="language-plaintext highlighter-rouge">apagar</code>, <code class="language-plaintext highlighter-rouge">reinicar</code>, <code class="language-plaintext highlighter-rouge">suspender</code>, <code class="language-plaintext highlighter-rouge">bloquear la pantalla</code> o <code class="language-plaintext highlighter-rouge">cerrar sesión</code>. Es accesible desde la polybar y esta desarrollado bajo bash y rofi.</p>
+
+<p align="center">
+    <img src="/assets/images/entorno-trabajo-profesional-bspwm/powermenu1.png" />
+</p>
+
+<p align="center">
+    <img src="/assets/images/entorno-trabajo-profesional-bspwm/powermenu2.png" />
+</p>
+
+<h4 id="powermenush">powermenu.sh</h4>
+<p>Este es el script que hace uso el módulo <code class="language-plaintext highlighter-rouge">powermenu</code> definido en el archivo de configuración de la polybar <a href="#archivo-config"><code class="language-plaintext highlighter-rouge">config</code></a>.</p>
+
+<p>Situado en el directorio <code class="language-plaintext highlighter-rouge">~/.config/rofi/powermenu</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="nv">theme</span><span class="o">=</span><span class="s2">"setting"</span>
+<span class="nb">dir</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.config/rofi/powermenu"</span>
+<span class="nv">user</span><span class="o">=</span><span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span>
+
+<span class="nv">rofi_command</span><span class="o">=</span><span class="s2">"rofi -theme </span><span class="nv">$dir</span><span class="s2">/</span><span class="nv">$theme</span><span class="s2">"</span>
+
+<span class="c"># Options</span>
+<span class="nv">shutdown</span><span class="o">=</span><span class="s2">" Shutdown"</span>
+<span class="nv">reboot</span><span class="o">=</span><span class="s2">" Reboot"</span>
+<span class="nb">suspend</span><span class="o">=</span><span class="s2">" Suspend"</span>
+<span class="nv">lock</span><span class="o">=</span><span class="s2">" Lockscreen"</span>
+<span class="nb">logout</span><span class="o">=</span><span class="s2">" Logout"</span>
+
+<span class="c"># Confirmation</span>
+confirm_exit<span class="o">()</span> <span class="o">{</span>
+	rofi <span class="nt">-dmenu</span><span class="se">\</span>
+		<span class="nt">-i</span><span class="se">\</span>
+		<span class="nt">-no-fixed-num-lines</span><span class="se">\</span>
+		<span class="nt">-p</span> <span class="s2">"Are You Sure?"</span><span class="se">\</span>
+		<span class="nt">-theme</span> <span class="nv">$dir</span>/confirm.rasi
+<span class="o">}</span>
+
+<span class="c"># Variable passed to rofi</span>
+<span class="nv">options</span><span class="o">=</span><span class="s2">"</span><span class="nv">$shutdown</span><span class="se">\n</span><span class="nv">$reboot</span><span class="se">\n</span><span class="nv">$suspend</span><span class="se">\n</span><span class="nv">$lock</span><span class="se">\n</span><span class="nv">$logout</span><span class="s2">"</span>
+
+<span class="nv">chosen</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="nv">$options</span><span class="s2">"</span> | <span class="nv">$rofi_command</span> <span class="nt">-p</span> <span class="s2">"</span><span class="nv">$user</span><span class="s2">"</span> <span class="nt">-dmenu</span> <span class="nt">-selected-row</span> 2<span class="si">)</span><span class="s2">"</span>
+<span class="k">case</span> <span class="nv">$chosen</span> <span class="k">in</span>
+    <span class="nv">$shutdown</span><span class="p">)</span>
+        <span class="nv">ans</span><span class="o">=</span><span class="si">$(</span>confirm_exit &amp;<span class="si">)</span>
+        <span class="k">if</span> <span class="o">[[</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"y"</span> <span class="o">||</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"Y"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+            </span>systemctl poweroff
+        <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"n"</span> <span class="o">||</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"N"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+            </span><span class="nb">exit </span>0
+        <span class="k">fi</span>
+        <span class="p">;;</span>
+    <span class="nv">$reboot</span><span class="p">)</span>
+        <span class="nv">ans</span><span class="o">=</span><span class="si">$(</span>confirm_exit &amp;<span class="si">)</span>
+        <span class="k">if</span> <span class="o">[[</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"y"</span> <span class="o">||</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"Y"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+            </span>systemctl reboot
+        <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"n"</span> <span class="o">||</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"N"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+            </span><span class="nb">exit </span>0
+        <span class="k">fi</span>
+        <span class="p">;;</span>
+    <span class="nv">$lock</span><span class="p">)</span>
+        <span class="k">if</span> <span class="o">[[</span> <span class="nt">-f</span> /home/adrianbellver/.local/bin/betterlockscreen <span class="o">]]</span><span class="p">;</span> <span class="k">then
+            </span>betterlockscreen <span class="nt">-l</span> dimblur <span class="nt">--time-format</span> <span class="s2">"%H:%M"</span>
+        <span class="k">fi</span>
+        <span class="p">;;</span>
+    <span class="nv">$suspend</span><span class="p">)</span>
+        <span class="nv">ans</span><span class="o">=</span><span class="si">$(</span>confirm_exit &amp;<span class="si">)</span>
+        <span class="k">if</span> <span class="o">[[</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"y"</span> <span class="o">||</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"Y"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+            </span>betterlockscreen <span class="nt">-l</span> dimblur <span class="nt">--time-format</span> <span class="s2">"%H:%M"</span> &amp;
+            <span class="nb">sleep </span>2s
+            systemctl <span class="nb">suspend
+        </span><span class="k">elif</span> <span class="o">[[</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"n"</span> <span class="o">||</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"N"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+            </span><span class="nb">exit </span>0
+        <span class="k">fi</span>
+        <span class="p">;;</span>
+    <span class="nv">$logout</span><span class="p">)</span>
+        <span class="nv">ans</span><span class="o">=</span><span class="si">$(</span>confirm_exit &amp;<span class="si">)</span>
+        <span class="k">if</span> <span class="o">[[</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"y"</span> <span class="o">||</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"Y"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+            if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$DESKTOP_SESSION</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"bspwm"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+                </span>bspc quit
+            <span class="k">fi
+        elif</span> <span class="o">[[</span> <span class="nv">$$</span>ans <span class="o">==</span> <span class="s2">"n"</span> <span class="o">||</span> <span class="nv">$ans</span> <span class="o">==</span> <span class="s2">"N"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+            </span><span class="nb">exit </span>0
+        <span class="k">fi</span>
+        <span class="p">;;</span>
+<span class="k">esac</span>
+</code></pre></div></div>
+<h4 id="settingrasi">setting.rasi</h4>
+<p>Este es el archivo de configuración que da el aspecto al menú principal.</p>
+
+<p>Situado en el directorio <code class="language-plaintext highlighter-rouge">~/.config/rofi/powermenu</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>configuration <span class="o">{</span>
+    display-drun:                   <span class="s2">"app"</span><span class="p">;</span>
+    display-window:                 <span class="s2">"window"</span><span class="p">;</span>
+    show-icons:true<span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="k">*</span> <span class="o">{</span>
+    lines: 10<span class="p">;</span>
+    columns: 1<span class="p">;</span>
+    border-color: <span class="c">#668bd7;</span>
+    text-color: <span class="c">#0c051f;</span>
+    font: <span class="s2">"Roboto 11"</span><span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="c">#window {</span>
+    border: 2<span class="p">;</span>
+    border-radius: 4px<span class="p">;</span>
+    padding: 0px<span class="p">;</span>
+    width: 25%<span class="p">;</span>
+    height: 21.50%<span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="c">#mainbox {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    children: <span class="o">[</span>inputbar, listview]<span class="p">;</span>
+    spacing: 10px<span class="p">;</span>
+    padding: 0 0 0 0<span class="p">;</span>
+    border: 15px<span class="p">;</span>
+    border-color: <span class="c">#0c051f00;</span>
+<span class="o">}</span>
+ 
+ 
+<span class="c">#listview {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    fixed-height: 0<span class="p">;</span>
+    border: 0px<span class="p">;</span>
+    spacing: 10px<span class="p">;</span>
+    scrollbar: <span class="nb">false</span><span class="p">;</span>
+    padding: 0px 0px 0px<span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="c">#element {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    border: 0<span class="p">;</span>
+    border-radius: 30px<span class="p">;</span>
+    padding: 4 4 4 4 <span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="c">#element selected {</span>
+    background-color: <span class="c">#DE652E;</span>
+    text-color: <span class="c">#f1d389;</span>
+<span class="o">}</span>
+ 
+ 
+<span class="c">#inputbar {</span>
+    children:   <span class="o">[</span> prompt,textbox-prompt-colon,entry,case-indicator <span class="o">]</span><span class="p">;</span>
+    background-color: <span class="c">#0c051f00;</span>
+<span class="o">}</span>
+ 
+<span class="c">#case-indicator {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    spacing:    0<span class="p">;</span>
+<span class="o">}</span>
+<span class="c">#entry {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    spacing:    0<span class="p">;</span>
+<span class="o">}</span>
+<span class="c">#prompt {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    spacing:    0<span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="c">#textbox-prompt-colon {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    <span class="nb">expand</span>:     <span class="nb">false</span><span class="p">;</span>
+    str:        <span class="s2">":"</span><span class="p">;</span>
+    margin:     0px 0.3em 0em 0em <span class="p">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="confirmrasi">confirm.rasi</h4>
+<p>Este es el archivo de configuración que da el aspecto al menú de confirmación.</p>
+
+<p>Situado en el directorio <code class="language-plaintext highlighter-rouge">~/.config/rofi/powermenu</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>configuration <span class="o">{</span>
+    display-drun:                   <span class="s2">"app"</span><span class="p">;</span>
+    display-window:                 <span class="s2">"window"</span><span class="p">;</span>
+    show-icons:true<span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="k">*</span> <span class="o">{</span>
+    lines: 10<span class="p">;</span>
+    columns: 1<span class="p">;</span>
+    border-color: <span class="c">#668bd7;</span>
+    text-color: <span class="c">#0c051f;</span>
+    font: <span class="s2">"Roboto 11"</span><span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="c">#window {</span>
+    border: 2<span class="p">;</span>
+    border-radius: 4px<span class="p">;</span>
+    padding: 0px<span class="p">;</span>
+    width: 10%<span class="p">;</span>
+    height: 5.50%<span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="c">#mainbox {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    children: <span class="o">[</span>inputbar, listview]<span class="p">;</span>
+    spacing: 10px<span class="p">;</span>
+    padding: 0 0 0 0<span class="p">;</span>
+    border: 15px<span class="p">;</span>
+    border-color: <span class="c">#0c051f00;</span>
+<span class="o">}</span>
+ 
+ 
+<span class="c">#listview {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    fixed-height: 0<span class="p">;</span>
+    border: 0px<span class="p">;</span>
+    spacing: 10px<span class="p">;</span>
+    scrollbar: <span class="nb">false</span><span class="p">;</span>
+    padding: 0px 0px 0px<span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="c">#element {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    border: 0<span class="p">;</span>
+    border-radius: 30px<span class="p">;</span>
+    padding: 4 4 4 4 <span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="c">#element selected {</span>
+    background-color: <span class="c">#DE652E;</span>
+    text-color: <span class="c">#f1d389;</span>
+<span class="o">}</span>
+ 
+ 
+<span class="c">#inputbar {</span>
+    children:   <span class="o">[</span> prompt,textbox-prompt-colon,entry,case-indicator <span class="o">]</span><span class="p">;</span>
+    background-color: <span class="c">#0c051f00;</span>
+<span class="o">}</span>
+ 
+<span class="c">#case-indicator {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    spacing:    0<span class="p">;</span>
+<span class="o">}</span>
+<span class="c">#entry {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    spacing:    0<span class="p">;</span>
+<span class="o">}</span>
+<span class="c">#prompt {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    spacing:    0<span class="p">;</span>
+<span class="o">}</span>
+ 
+<span class="c">#textbox-prompt-colon {</span>
+    background-color: <span class="c">#0c051f00;</span>
+    <span class="nb">expand</span>:     <span class="nb">false</span><span class="p">;</span>
+    str:        <span class="s2">":"</span><span class="p">;</span>
+    margin:     0px 0.3em 0em 0em <span class="p">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="polybar">polybar</h2>
+<p><a href="https://github.com/polybar/polybar">polybar</a> es una herramienta rápida y totalmente customizable para crear barras de estado.</p>
+
+<h3 id="archivo-launchsh">Archivo launch.sh</h3>
+<p>Este es el archivo de configuración que lanza las barras de estado que se definen en el archivo <a href="#archivo-config"><code class="language-plaintext highlighter-rouge">config</code></a>.</p>
+
+<p>Situado en el directorio <code class="language-plaintext highlighter-rouge">~/.config/polybar</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="c"># Terminate already running bar instances</span>
+killall <span class="nt">-q</span> polybar
+
+<span class="c"># Wait until the processes have been shut down</span>
+<span class="k">while </span>pgrep <span class="nt">-u</span> <span class="nv">$UID</span> <span class="nt">-x</span> polybar <span class="o">&gt;</span>/dev/null<span class="p">;</span> <span class="k">do </span><span class="nb">sleep </span>1<span class="p">;</span> <span class="k">done
+
+for </span>m <span class="k">in</span> <span class="si">$(</span>xrandr <span class="nt">--query</span> | <span class="nb">grep</span> <span class="nt">-w</span> connected | <span class="nb">awk</span> <span class="s1">'{print $1}'</span><span class="si">)</span><span class="p">;</span> <span class="k">do
+	</span><span class="nv">MONITOR</span><span class="o">=</span><span class="nv">$m</span> polybar <span class="nt">-c</span> <span class="nv">$HOME</span>/.config/polybar/config <span class="nt">--reload</span> mainbar-bspwm &amp;
+<span class="k">done
+
+</span><span class="nb">echo</span> <span class="s2">"Bars launched..."</span>
+</code></pre></div></div>
+
+<h3 id="archivo-config">Archivo config</h3>
+<p>Este es el archivo de configuración situado en el directorio <code class="language-plaintext highlighter-rouge">~/.config/polybar</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#  ____  _   _ _  _   ____  _  ______ ___ ____  _____ </span>
+<span class="c"># / ___|| | | | || | |  _ \| |/ / ___|_ _|  _ \| ____|</span>
+<span class="c"># \___ \| |_| | || |_| |_) | ' /\___ \| || | | |  _|  </span>
+<span class="c">#  ___) |  _  |__   _|  _ &lt;| . \ ___) | || |_| | |___ </span>
+<span class="c"># |____/|_| |_|  |_| |_| \_\_|\_\____/___|____/|_____|	</span>
+<span class="c">#</span>
+<span class="c"># Created by Sh4rkside</span>
+
+<span class="p">;</span><span class="o">=====================================================</span>
+<span class="p">;</span>
+<span class="p">;</span> To learn more about how to configure Polybar
+<span class="p">;</span> go to https://github.com/jaagr/polybar
+<span class="p">;</span>
+<span class="p">;</span> The README contains alot of information
+<span class="p">;</span> Themes : https://github.com/jaagr/dots/tree/master/.local/etc/themer/themes
+<span class="p">;</span> https://github.com/jaagr/polybar/wiki/
+<span class="p">;</span> https://github.com/jaagr/polybar/wiki/Configuration
+<span class="p">;</span> https://github.com/jaagr/polybar/wiki/Formatting
+<span class="p">;</span>
+<span class="p">;</span><span class="o">=====================================================</span>
+
+<span class="o">[</span>global/wm]
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Configuration#global-wm-settings
+margin-top <span class="o">=</span> 0
+margin-bottom <span class="o">=</span> 0
+
+<span class="o">[</span>settings]
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Configuration#application-settings
+throttle-output <span class="o">=</span> 5
+throttle-output-for <span class="o">=</span> 10
+screenchange-reload <span class="o">=</span> <span class="nb">true
+</span>compositing-background <span class="o">=</span> over
+compositing-foreground <span class="o">=</span> over
+compositing-overline <span class="o">=</span> over
+compositing-underline <span class="o">=</span> over
+compositing-border <span class="o">=</span> over
+
+<span class="p">;</span> Define fallback values used by all module formats
+format-foreground <span class="o">=</span> <span class="c">#FF0000</span>
+format-background <span class="o">=</span> <span class="c">#00FF00</span>
+format-underline <span class="o">=</span>
+format-overline <span class="o">=</span>
+format-spacing <span class="o">=</span>
+format-padding <span class="o">=</span>
+format-margin <span class="o">=</span>
+format-offset <span class="o">=</span>
+
+<span class="o">[</span>colors]
+<span class="p">;</span> Nord theme <span class="o">============</span>
+background <span class="o">=</span> <span class="c">#282c34</span>
+foreground <span class="o">=</span> <span class="c">#abb2bf</span>
+alert <span class="o">=</span> <span class="c">#bd2c40</span>
+volume-min <span class="o">=</span> <span class="c">#a3be8c</span>
+volume-med <span class="o">=</span> <span class="c">#ebcb8b</span>
+volume-max <span class="o">=</span> <span class="c">#bf616a</span>
+<span class="p">;</span> <span class="o">=======================</span>
+
+<span class="p">;</span> Gotham theme <span class="o">==========</span>
+<span class="p">;</span> background <span class="o">=</span> <span class="c">#0a0f14</span>
+<span class="p">;</span> foreground <span class="o">=</span> <span class="c">#99d1ce</span>
+<span class="p">;</span> alert <span class="o">=</span> <span class="c">#d26937</span>
+<span class="p">;</span> volume-min <span class="o">=</span> <span class="c">#2aa889</span>
+<span class="p">;</span> volume-med <span class="o">=</span> <span class="c">#edb443</span>
+<span class="p">;</span> volume-max <span class="o">=</span> <span class="c">#c23127</span>
+<span class="p">;</span> <span class="o">=======================</span>
+
+<span class="p">;</span> INTRCPTR theme <span class="o">============</span>
+<span class="p">;</span>background <span class="o">=</span> <span class="k">${</span><span class="nv">xrdb</span>:color0:#222<span class="k">}</span>
+<span class="p">;</span>background <span class="o">=</span> <span class="c">#aa000000</span>
+<span class="p">;</span>background-alt <span class="o">=</span> <span class="c">#444</span>
+<span class="p">;</span>foreground <span class="o">=</span> <span class="k">${</span><span class="nv">xrdb</span>:color7:#222<span class="k">}</span>
+<span class="p">;</span>foreground <span class="o">=</span> <span class="c">#fff</span>
+<span class="p">;</span>foreground-alt <span class="o">=</span> <span class="c">#555</span>
+<span class="p">;</span>primary <span class="o">=</span> <span class="c">#ffb52a</span>
+<span class="p">;</span>secondary <span class="o">=</span> <span class="c">#e60053</span>
+<span class="p">;</span>alert <span class="o">=</span> <span class="c">#bd2c40</span>
+
+<span class="c">################################################################################</span>
+<span class="c">################################################################################</span>
+<span class="c">############                  MAINBAR-BSPWM                         ############</span>
+<span class="c">################################################################################</span>
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>bar/mainbar-bspwm]
+monitor <span class="o">=</span> <span class="k">${</span><span class="nv">env</span>:MONITOR<span class="k">}</span>
+<span class="p">;</span>monitor-fallback <span class="o">=</span> HDMI1
+width <span class="o">=</span> 100%
+height <span class="o">=</span> 20
+<span class="p">;</span>offset-x <span class="o">=</span> 1%
+<span class="p">;</span>offset-y <span class="o">=</span> 1%
+radius <span class="o">=</span> 0.0
+fixed-center <span class="o">=</span> <span class="nb">true
+</span>bottom <span class="o">=</span> <span class="nb">false
+</span>separator <span class="o">=</span> 
+
+background <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.background</span><span class="k">}</span>
+foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+
+line-size <span class="o">=</span> 2
+line-color <span class="o">=</span> <span class="c">#f00</span>
+
+wm-restack <span class="o">=</span> bspwm
+override-redirect <span class="o">=</span> <span class="nb">false</span>
+
+<span class="p">;</span> Enable support <span class="k">for </span>inter-process messaging
+<span class="p">;</span> See the Messaging wiki page <span class="k">for </span>more details.
+enable-ipc <span class="o">=</span> <span class="nb">true
+
+</span>border-size <span class="o">=</span> 0
+<span class="p">;</span>border-left-size <span class="o">=</span> 0
+<span class="p">;</span>border-right-size <span class="o">=</span> 25
+<span class="p">;</span>border-top-size <span class="o">=</span> 0
+<span class="p">;</span>border-bottom-size <span class="o">=</span> 25
+border-color <span class="o">=</span> <span class="c">#00000000</span>
+
+padding-left <span class="o">=</span> 1
+padding-right <span class="o">=</span> 1
+
+module-margin-left <span class="o">=</span> 0
+module-margin-right <span class="o">=</span> 0
+
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Fonts
+font-0 <span class="o">=</span> <span class="s2">"UbuntuMono Nerd Font:size=10;2"</span>
+font-1 <span class="o">=</span> <span class="s2">"UbuntuMono Nerd Font:size=16;3"</span>
+font-2 <span class="o">=</span> <span class="s2">"Font Awesome 5 Free Regular:style=Regular:pixelsize=8;1"</span>
+font-3 <span class="o">=</span> <span class="s2">"Font Awesome 5 Free Solid:style=Solid:pixelsize=8;1"</span>
+font-4 <span class="o">=</span> <span class="s2">"Font Awesome 5 Brands Regular:style=Regular:pixelsize=8;1"</span>
+font-5 <span class="o">=</span> <span class="s2">"Hack Nerd Font:style=Regular:pixelsize=16;4"</span>
+
+modules-left <span class="o">=</span> bspwm xwindow
+modules-center <span class="o">=</span> 
+modules-right <span class="o">=</span> xkeyboard arrow_morado_f <span class="nb">uptime </span>arrow2 memory3 arrow3 cpu2 temperaturecpu arrow2 wireless-network arrow3 wired-network arrow2 pulseaudio-control arrow3 <span class="nb">date </span>arrow2 backlight arrow3 battery arrow2 powermenu
+
+tray-detached <span class="o">=</span> <span class="nb">false
+</span>tray-offset-x <span class="o">=</span> 0
+tray-offset-y <span class="o">=</span> 0
+tray-position <span class="o">=</span> right
+tray-padding <span class="o">=</span> 2
+tray-maxsize <span class="o">=</span> 13
+tray-scale <span class="o">=</span> 1.0
+tray-background <span class="o">=</span> <span class="c">#668bd7</span>
+<span class="p">;</span>tray-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+
+scroll-up <span class="o">=</span> bspwm-desknext
+scroll-down <span class="o">=</span> bspwm-deskprev
+
+<span class="c">################################################################################</span>
+<span class="c">################################################################################</span>
+<span class="c">############                       MODULE BSPWM                     ############</span>
+<span class="c">################################################################################</span>
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/bspwm]
+<span class="nb">type</span> <span class="o">=</span> internal/bspwm
+
+enable-click <span class="o">=</span> <span class="nb">true
+</span>enable-scroll <span class="o">=</span> <span class="nb">true
+</span>reverse-scroll <span class="o">=</span> <span class="nb">true
+</span>pin-workspaces <span class="o">=</span> <span class="nb">true
+
+</span>ws-icon-0 <span class="o">=</span> I<span class="p">;</span>
+ws-icon-1 <span class="o">=</span> II<span class="p">;</span>
+ws-icon-2 <span class="o">=</span> III<span class="p">;</span>
+ws-icon-3 <span class="o">=</span> IV<span class="p">;</span>
+ws-icon-4 <span class="o">=</span> V<span class="p">;</span>
+ws-icon-5 <span class="o">=</span> VI<span class="p">;</span>
+ws-icon-6 <span class="o">=</span> VII<span class="p">;</span>
+ws-icon-7 <span class="o">=</span> VIII<span class="p">;</span>
+ws-icon-8 <span class="o">=</span> IX<span class="p">;</span>
+ws-icon-9 <span class="o">=</span> X<span class="p">;</span>
+ws-icon-default <span class="o">=</span> <span class="s2">" "</span>
+
+
+format <span class="o">=</span> &lt;label-state&gt; &lt;label-mode&gt;
+
+label-focused <span class="o">=</span> %icon%
+label-focused-background <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.background</span><span class="k">}</span>
+label-focused-foreground <span class="o">=</span> <span class="c">#8d62ad</span>
+label-focused-underline<span class="o">=</span> <span class="c">#8d62ad</span>
+label-focused-padding <span class="o">=</span> 2
+<span class="p">;</span>label-focused-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+
+label-occupied <span class="o">=</span> %icon%
+label-occupied-foreground <span class="o">=</span> <span class="c">#668bd7</span>
+label-occupied-padding <span class="o">=</span> 2
+label-occupied-background <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.background</span><span class="k">}</span>
+
+label-urgent <span class="o">=</span> %icon%
+label-urgent-padding <span class="o">=</span> 2
+
+label-empty <span class="o">=</span> %icon%
+label-empty-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+label-empty-padding <span class="o">=</span> 2
+label-empty-background <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.background</span><span class="k">}</span>
+label-monocle <span class="o">=</span> <span class="s2">"  "</span>
+label-monocle-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+label-tiled <span class="o">=</span> <span class="s2">"  "</span>
+label-tiled-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+label-fullscreen <span class="o">=</span> <span class="s2">"  "</span>
+label-fullscreen-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+label-floating <span class="o">=</span> <span class="s2">"  "</span>
+label-floating-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+label-pseudotiled <span class="o">=</span> <span class="s2">"  "</span>
+label-pseudotiled-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+label-locked <span class="o">=</span> <span class="s2">"  "</span>
+label-locked-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+label-sticky <span class="o">=</span> <span class="s2">"  "</span>
+label-sticky-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+label-private <span class="o">=</span>  <span class="s2">"     "</span>
+label-private-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+
+<span class="p">;</span> Separator <span class="k">in </span>between workspaces
+<span class="p">;</span>label-separator <span class="o">=</span> |
+<span class="p">;</span>label-separator-padding <span class="o">=</span> 10
+<span class="p">;</span>label-separator-foreground <span class="o">=</span> <span class="c">#ffb52a</span>
+
+format-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+format-background <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.background</span><span class="k">}</span>
+
+
+
+
+<span class="c">################################################################################</span>
+<span class="c">###############################################################################</span>
+<span class="c">############                       MODULES ARROWS                     ############</span>
+<span class="c">################################################################################</span>
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/arrow1]
+<span class="p">;</span> grey to Blue
+<span class="nb">type</span> <span class="o">=</span> custom/text
+content <span class="o">=</span> <span class="s2">"%{T2} %{T-}"</span>
+content-font <span class="o">=</span> 5
+content-foreground <span class="o">=</span> <span class="c">#8d62a9</span>
+content-background <span class="o">=</span> <span class="c">#292d3e</span>
+
+<span class="o">[</span>module/arrow2]
+<span class="p">;</span> grey to Blue
+<span class="nb">type</span> <span class="o">=</span> custom/text
+content <span class="o">=</span> <span class="s2">"%{T2} %{T-}"</span>
+content-font <span class="o">=</span> 5
+content-foreground <span class="o">=</span> <span class="c">#668bd7</span>
+content-background <span class="o">=</span> <span class="c">#8d62a9</span>
+
+<span class="o">[</span>module/arrow3]
+<span class="p">;</span> grey to Blue
+<span class="nb">type</span> <span class="o">=</span> custom/text
+content <span class="o">=</span> <span class="s2">"%{T2} %{T-}"</span>
+content-font <span class="o">=</span> 5
+content-foreground <span class="o">=</span> <span class="c">#8b62a9</span>
+content-background <span class="o">=</span> <span class="c">#668bd7</span>
+
+<span class="o">[</span>module/arrow_morado_f]
+<span class="nb">type</span> <span class="o">=</span> custom/text
+content <span class="o">=</span> <span class="s2">"%{T2} %{T-}"</span>
+content-font <span class="o">=</span> 5
+content-foreground <span class="o">=</span> <span class="c">#8b62a9</span>
+content-background <span class="o">=</span> <span class="c">#282c34</span>
+
+<span class="o">[</span>module/arrow_azul_f]
+<span class="nb">type</span> <span class="o">=</span> custom/text
+content <span class="o">=</span> <span class="s2">"%{T2} %{T-}"</span>
+content-font <span class="o">=</span> 5
+content-foreground <span class="o">=</span> <span class="c">#668bd7</span>
+content-background <span class="o">=</span> <span class="c">#282c34</span>
+
+<span class="c">################################################################################</span>
+<span class="c">###############################################################################</span>
+<span class="c">#                      					MODULES                      		</span>
+<span class="c">################################################################################</span>
+<span class="c">################################################################################</span>
+
+<span class="c">################################################################################</span>
+<span class="o">[</span>module/temperaturecpu]
+<span class="nb">type</span> <span class="o">=</span> custom/script
+<span class="nb">exec</span> <span class="o">=</span> sensors | <span class="nb">grep</span> <span class="s1">'Package id'</span> | <span class="nb">cut</span> <span class="nt">-d</span><span class="s1">' '</span> <span class="nt">-f5</span> | <span class="nb">sed</span> <span class="s1">'s/+//'</span> | <span class="nb">sed</span> <span class="s1">'s/.$//'</span>
+<span class="nb">tail</span> <span class="o">=</span> <span class="nb">false
+</span>interval <span class="o">=</span> 5
+
+format-background <span class="o">=</span> <span class="c">#8d62ad</span>
+format-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+
+format-prefix <span class="o">=</span> <span class="s2">"  "</span>
+format-prefix-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/powermenu]
+<span class="nb">type</span> <span class="o">=</span> custom/text
+content <span class="o">=</span> <span class="s2">"  "</span>
+
+content-background <span class="o">=</span> <span class="c">#668bd7</span>
+content-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+
+click-left <span class="o">=</span> ~/.config/rofi/powermenu/powermenu.sh &amp;
+click-right <span class="o">=</span> bash /opt/google/chrome/google-chrome <span class="nt">--profile-directory</span><span class="o">=</span>Default <span class="nt">--app-id</span><span class="o">=</span>kjbdgfilnfhdoflbpgamdcdgpehopbep
+
+
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/backlight]
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Module:-backlight
+
+<span class="nb">type</span> <span class="o">=</span> internal/backlight
+
+<span class="p">;</span> Use the following <span class="nb">command </span>to list available cards:
+<span class="p">;</span> <span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-1</span> /sys/class/backlight/
+card <span class="o">=</span> intel_backlight
+
+<span class="p">;</span> Available tags:
+<span class="p">;</span>   &lt;label&gt; <span class="o">(</span>default<span class="o">)</span>
+<span class="p">;</span>   &lt;ramp&gt;
+<span class="p">;</span>   &lt;bar&gt;
+format <span class="o">=</span> &lt;ramp&gt; &lt;label&gt;
+format-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-background <span class="o">=</span> <span class="c">#668bd7</span>
+
+<span class="p">;</span> Available tokens:
+<span class="p">;</span>   %percentage% <span class="o">(</span>default<span class="o">)</span>
+label <span class="o">=</span> %percentage%%
+
+<span class="p">;</span> Only applies <span class="k">if</span> &lt;ramp&gt; is used
+ramp-0 <span class="o">=</span> <span class="s2">" 🌕"</span>
+ramp-1 <span class="o">=</span> <span class="s2">" 🌔"</span>
+ramp-2 <span class="o">=</span> <span class="s2">" 🌓"</span>
+ramp-3 <span class="o">=</span> <span class="s2">" 🌒"</span>
+ramp-4 <span class="o">=</span> <span class="s2">" 🌑"</span>
+
+<span class="p">;</span> Only applies <span class="k">if</span> &lt;bar&gt; is used
+bar-width <span class="o">=</span> 10
+bar-indicator <span class="o">=</span> |
+bar-fill <span class="o">=</span> ─
+bar-empty <span class="o">=</span> ─
+
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/battery]
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Module:-battery
+<span class="nb">type</span> <span class="o">=</span> internal/battery
+battery <span class="o">=</span> BAT1
+adapter <span class="o">=</span> ADP1
+full-at <span class="o">=</span> 100
+
+format-charging <span class="o">=</span> &lt;animation-charging&gt; &lt;label-charging&gt;
+label-charging <span class="o">=</span>  %percentage%%
+<span class="p">;</span>format-charging-underline <span class="o">=</span> <span class="c">#a3c725</span>
+format-charging-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-charging-background <span class="o">=</span> <span class="c">#8d62ad</span>
+<span class="p">;</span>format-charging-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+<span class="p">;</span>format-charging-background <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.background</span><span class="k">}</span>
+
+format-discharging <span class="o">=</span> &lt;ramp-capacity&gt; &lt;label-discharging&gt;
+label-discharging <span class="o">=</span>  %percentage%%
+<span class="p">;</span>format-discharging-underline <span class="o">=</span> <span class="c">#c7ae25</span>
+format-discharging-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-discharging-background <span class="o">=</span> <span class="c">#8d62ad</span>
+<span class="p">;</span>format-discharging-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+<span class="p">;</span>format-discharging-background <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.background</span><span class="k">}</span>
+
+format-full-prefix <span class="o">=</span> <span class="s2">" "</span>
+format-full-prefix-foreground <span class="o">=</span> <span class="c">#a3c725</span>
+format-full-underline <span class="o">=</span> <span class="c">#a3c725</span>
+format-full-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-full-background <span class="o">=</span> <span class="c">#8d62ad</span>
+<span class="p">;</span>format-full-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+<span class="p">;</span>format-full-background <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.background</span><span class="k">}</span>
+
+ramp-capacity-0 <span class="o">=</span> 
+ramp-capacity-1 <span class="o">=</span> 
+ramp-capacity-2 <span class="o">=</span> 
+ramp-capacity-3 <span class="o">=</span> 
+ramp-capacity-4 <span class="o">=</span> 
+ramp-capacity-foreground <span class="o">=</span> <span class="c">#c7ae25</span>
+
+animation-charging-0 <span class="o">=</span> 
+animation-charging-1 <span class="o">=</span> 
+animation-charging-2 <span class="o">=</span> 
+animation-charging-3 <span class="o">=</span> 
+animation-charging-4 <span class="o">=</span> 
+animation-charging-foreground <span class="o">=</span> <span class="c">#a3c725</span>
+animation-charging-framerate <span class="o">=</span> 750
+
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/cpu2]
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Module:-cpu
+<span class="nb">type</span> <span class="o">=</span> internal/cpu
+<span class="p">;</span> Seconds to <span class="nb">sleep </span>between updates
+<span class="p">;</span> Default: 1
+interval <span class="o">=</span> 1
+format-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-background <span class="o">=</span> <span class="c">#8d62ad</span>
+format-prefix <span class="o">=</span> <span class="s2">"  "</span>
+format-prefix-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+
+label-font <span class="o">=</span> 1
+
+<span class="p">;</span> Available tags:
+<span class="p">;</span>   &lt;label&gt; <span class="o">(</span>default<span class="o">)</span>
+<span class="p">;</span>   &lt;bar-load&gt;
+<span class="p">;</span>   &lt;ramp-load&gt;
+<span class="p">;</span>   &lt;ramp-coreload&gt;
+format <span class="o">=</span> &lt;label&gt;
+
+
+<span class="p">;</span> Available tokens:
+<span class="p">;</span>   %percentage% <span class="o">(</span>default<span class="o">)</span> - total cpu load
+<span class="p">;</span>   %percentage-cores% - load percentage <span class="k">for </span>each core
+<span class="p">;</span>   %percentage-core[1-9]% - load percentage <span class="k">for </span>specific core
+<span class="p">;</span>label <span class="o">=</span> cpu %percentage:3%%
+label <span class="o">=</span> %percentage%% |
+
+
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/date]
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Module:-date
+<span class="nb">type</span> <span class="o">=</span> internal/date
+<span class="p">;</span> Seconds to <span class="nb">sleep </span>between updates
+interval <span class="o">=</span> 5
+<span class="p">;</span> See <span class="s2">"http://en.cppreference.com/w/cpp/io/manip/put_time"</span> <span class="k">for </span>details on how to format the <span class="nb">date </span>string
+<span class="p">;</span> NOTE: <span class="k">if </span>you want to use syntax tags here you need to use %%<span class="o">{</span>...<span class="o">}</span>
+<span class="nb">date</span> <span class="o">=</span> <span class="s2">" %a %b %d, %Y"</span>
+date-alt <span class="o">=</span> <span class="s2">" %a %b %d, %Y"</span>
+<span class="nb">time</span> <span class="o">=</span> %H:%M
+time-alt <span class="o">=</span> %l:%M%p
+format-prefix <span class="o">=</span> <span class="s2">" "</span>
+format-prefix-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-background <span class="o">=</span> <span class="c">#8d62ad</span>
+label <span class="o">=</span> <span class="s2">"%date% %time% "</span>
+
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/memory3]
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Module:-memory
+<span class="nb">type</span> <span class="o">=</span> internal/memory
+interval <span class="o">=</span> 1
+<span class="p">;</span> Available tokens:
+<span class="p">;</span>   %percentage_used% <span class="o">(</span>default<span class="o">)</span>
+<span class="p">;</span>   %percentage_free%
+<span class="p">;</span>   %gb_used%
+<span class="p">;</span>   %gb_free%
+<span class="p">;</span>   %gb_total%
+<span class="p">;</span>   %mb_used%
+<span class="p">;</span>   %mb_free%
+<span class="p">;</span>   %mb_total%
+label <span class="o">=</span> %gb_used%
+
+format <span class="o">=</span> &lt;label&gt;
+format-prefix <span class="o">=</span> <span class="s2">"  "</span>
+format-prefix-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-background <span class="o">=</span> <span class="c">#668bd7</span>
+
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/pulseaudio-control]
+<span class="nb">type</span> <span class="o">=</span> custom/script
+<span class="nb">tail</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="p">;</span>label <span class="o">=</span> %output%
+label-padding <span class="o">=</span> 2
+<span class="nb">exec</span> <span class="o">=</span> pulseaudio-control <span class="nt">--autosync</span> <span class="nt">--format</span> <span class="s1">'$VOL_ICON ${VOL_LEVEL}% "|" $SINK_NICKNAME'</span> <span class="nt">--sink-nickname</span> <span class="s1">'alsa_output.pci-0000_00_1f.3.analog-stereo:'</span> <span class="nt">--sink-nickname</span> <span class="s1">'alsa_output.pci-0000_01_00.1.hdmi-stereo:﴿'</span> <span class="nt">--sink-nickname</span> <span class="s1">'bluez_sink.E4_41_22_2A_A2_CF.a2dp_sink:'</span> <span class="nt">--color-muted</span> ffffff <span class="nt">--icons-volume</span> <span class="s2">" , "</span> <span class="nt">--icon-muted</span> <span class="s2">" "</span> listen
+click-right <span class="o">=</span> <span class="nb">exec </span>pavucontrol &amp;
+click-left <span class="o">=</span> paplay /usr/share/sounds/Yaru/stereo/bell.oga<span class="p">;</span> pulseaudio-control togmute
+click-middle <span class="o">=</span> pulseaudio-control next-sink<span class="p">;</span> paplay /usr/share/sounds/Yaru/stereo/bell.oga
+scroll-up <span class="o">=</span> pulseaudio-control <span class="nt">--volume-step</span> 5 <span class="nt">--volume-max</span> 153 up<span class="p">;</span> paplay /usr/share/sounds/Yaru/stereo/audio-volume-change.oga
+scroll-down <span class="o">=</span> pulseaudio-control <span class="nt">--volume-step</span> 5 down<span class="p">;</span> paplay /usr/share/sounds/Yaru/stereo/audio-volume-change.oga
+format-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-background <span class="o">=</span> <span class="c">#668bd7</span>
+
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/uptime]
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/User-contributed-modules#uptime
+<span class="nb">type</span> <span class="o">=</span> custom/script
+<span class="nb">exec</span> <span class="o">=</span> <span class="nb">uptime</span> | <span class="nb">awk</span> <span class="nt">-F</span>, <span class="s1">'{sub(".*up ",x,$1);print $1}'</span>
+interval <span class="o">=</span> 100
+label <span class="o">=</span> %output%
+
+format-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-background <span class="o">=</span> <span class="c">#8d62ad</span>
+format-prefix <span class="o">=</span> <span class="s2">"  "</span>
+<span class="p">;</span>format-prefix-foreground <span class="o">=</span> <span class="c">#C15D3E</span>
+<span class="p">;</span>format-underline <span class="o">=</span> <span class="c">#C15D3E</span>
+
+<span class="c">#################################################################################</span>
+
+<span class="o">[</span>module/wired-network]
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Module:-network
+<span class="nb">type</span> <span class="o">=</span> internal/network
+interface <span class="o">=</span> enp2s0
+<span class="p">;</span>interface <span class="o">=</span> enp14s0
+interval <span class="o">=</span> 3.0
+
+<span class="p">;</span> Available tokens:
+<span class="p">;</span>   %ifname%    <span class="o">[</span>wireless+wired]
+<span class="p">;</span>   %local_ip%  <span class="o">[</span>wireless+wired]
+<span class="p">;</span>   %essid%     <span class="o">[</span>wireless]
+<span class="p">;</span>   %signal%    <span class="o">[</span>wireless]
+<span class="p">;</span>   %upspeed%   <span class="o">[</span>wireless+wired]
+<span class="p">;</span>   %downspeed% <span class="o">[</span>wireless+wired]
+<span class="p">;</span>   %linkspeed% <span class="o">[</span>wired]
+<span class="p">;</span> Default: %ifname% %local_ip%
+label-connected <span class="o">=</span>  %ifname% | %upspeed:7% %downspeed:7% | %local_ip%
+
+label-disconnected <span class="o">=</span> %ifname%
+
+format-connected-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-connected-background <span class="o">=</span> <span class="c">#8d62ad</span>
+<span class="p">;</span>format-connected-underline <span class="o">=</span> <span class="c">#55aa55</span>
+format-connected-prefix <span class="o">=</span> <span class="s2">"  "</span>
+format-connected-prefix-foreground <span class="o">=</span> <span class="c">#55aa55</span>
+format-connected-prefix-background <span class="o">=</span> <span class="c">#8d62ad</span>
+
+format-disconnected-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-disconnected-background <span class="o">=</span> <span class="c">#8d62ad</span>
+<span class="p">;</span>format-disconnected-underline <span class="o">=</span> <span class="c">#FF0000</span>
+format-disconnected-prefix <span class="o">=</span> <span class="s2">"  "</span>
+format-disconnected-prefix-foreground <span class="o">=</span> <span class="c">#FF0000</span>
+format-disconnected-prefix-background <span class="o">=</span> <span class="c">#8d62ad</span>
+
+<span class="p">;</span>format-disconnected-prefix <span class="o">=</span> <span class="s2">" "</span>
+<span class="p">;</span>format-disconnected-prefix-foreground <span class="o">=</span> <span class="c">#55aa55</span>
+<span class="p">;</span>format-disconnected-prefix-background <span class="o">=</span> <span class="c">#8d62ad</span>
+<span class="p">;</span>format-disconnected <span class="o">=</span> &lt;label-disconnected&gt;
+<span class="p">;</span>format-disconnected-underline <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.alert</span><span class="k">}</span>
+<span class="p">;</span>label-disconnected-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/wireless-network]
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Module:-network
+<span class="nb">type</span> <span class="o">=</span> internal/network
+interface <span class="o">=</span> wlo1
+interval <span class="o">=</span> 3.0
+label-connected <span class="o">=</span> %essid% - %signal% | %upspeed:7% %downspeed:7% | %local_ip%
+format-connected <span class="o">=</span> &lt;label-connected&gt; 
+<span class="p">;</span>format-connected <span class="o">=</span> &lt;ramp-signal&gt; &lt;label-connected&gt;
+format-connected-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-connected-background <span class="o">=</span> <span class="c">#668bd7</span>
+format-connected-prefix <span class="o">=</span> <span class="s2">"  "</span>
+format-connected-prefix-foreground <span class="o">=</span> <span class="c">#55aa55</span>
+format-connected-prefix-background <span class="o">=</span> <span class="c">#668bd7</span>
+<span class="p">;</span>format-connected-underline <span class="o">=</span> <span class="c">#7e52c6</span>
+
+label-disconnected <span class="o">=</span> %ifname%
+label-disconnected-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+label-disconnected-background <span class="o">=</span> <span class="c">#668bd7</span>
+
+format-disconnected <span class="o">=</span> &lt;label-disconnected&gt;
+format-disconnected-foreground <span class="o">=</span> <span class="c">#fefefe</span>
+format-disconnected-background <span class="o">=</span> <span class="c">#668bd7</span>
+format-disconnected-prefix <span class="o">=</span> <span class="s2">"  "</span>
+format-disconnected-prefix-foreground <span class="o">=</span> <span class="c">#FF0000</span>
+format-disconnected-prefix-background <span class="o">=</span> <span class="c">#668bd7</span>
+<span class="p">;</span>format-disconnected-underline <span class="o">=</span><span class="k">${</span><span class="nv">colors</span><span class="p">.alert</span><span class="k">}</span>
+
+ramp-signal-0 <span class="o">=</span> ▁
+ramp-signal-1 <span class="o">=</span> ▂
+ramp-signal-2 <span class="o">=</span> ▃
+ramp-signal-3 <span class="o">=</span> ▄
+ramp-signal-4 <span class="o">=</span> ▅
+ramp-signal-5 <span class="o">=</span> ▆
+ramp-signal-6 <span class="o">=</span> ▇
+ramp-signal-7 <span class="o">=</span> █
+ramp-signal-foreground <span class="o">=</span> <span class="c">#7e52c6</span>
+
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/xkeyboard]
+<span class="p">;</span>Muestra unicamente los iconos cuando estan activadas las funciones <span class="o">(</span>Caps y Num lock<span class="o">)</span>
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Module:-xkeyboard
+<span class="nb">type</span> <span class="o">=</span> internal/xkeyboard
+blacklist-0 <span class="o">=</span> scroll lock
+
+<span class="p">;</span>format-prefix <span class="o">=</span> <span class="s2">" "</span>
+<span class="p">;</span>format-prefix-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+<span class="p">;</span>format-prefix-background <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.background</span><span class="k">}</span>
+<span class="p">;</span>format-prefix-underline <span class="o">=</span> <span class="c">#3ecfb2</span>
+format-foreground <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.foreground</span><span class="k">}</span>
+format-background <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.background</span><span class="k">}</span>
+
+label-indicator-on-capslock <span class="o">=</span> <span class="s2">" "</span>
+<span class="p">;</span>Las siguientes variables estan mal definidas <span class="o">=&gt;</span> Por ello establezco como string vacio - on-numlock
+label-indicator-on-numlock <span class="o">=</span> <span class="s2">""</span>
+label-indicator-off-numlock <span class="o">=</span> <span class="s2">" "</span>
+<span class="p">;</span>
+label-indicator-padding <span class="o">=</span> 0
+label-indicator-margin <span class="o">=</span> 1
+label-layout <span class="o">=</span> <span class="s2">""</span>
+<span class="p">;</span>label-layout-underline <span class="o">=</span> <span class="c">#3ecfb2</span>
+
+
+<span class="c">################################################################################</span>
+
+<span class="o">[</span>module/xwindow]
+<span class="p">;</span>https://github.com/jaagr/polybar/wiki/Module:-xwindow
+<span class="nb">type</span> <span class="o">=</span> internal/xwindow
+
+<span class="p">;</span> Available tokens:
+<span class="p">;</span>   %title%
+<span class="p">;</span> Default: %title%
+label <span class="o">=</span> %title%
+label-maxlen <span class="o">=</span> 40
+
+format-prefix <span class="o">=</span> <span class="s2">"  "</span>
+format-prefix-underline <span class="o">=</span> <span class="c">#292d3e</span>
+format-underline <span class="o">=</span> <span class="c">#e1acff</span>
+format-foreground <span class="o">=</span> <span class="c">#e1acff</span>
+format-background <span class="o">=</span> <span class="k">${</span><span class="nv">colors</span><span class="p">.background</span><span class="k">}</span>
+
+<span class="c">###############################################################################</span>
+</code></pre></div></div>
+
+<h3 id="archivo-pulseaudio-control">Archivo pulseaudio-control</h3>
+<p>Este es el script que hace uso el módulo <code class="language-plaintext highlighter-rouge">pulseaudio-control</code> definido en el archivo de configuración de la polybar <a href="#archivo-config"><code class="language-plaintext highlighter-rouge">config</code></a>. Sirve para controlar las salidas de audio y el volumen de estas.</p>
+
+<p>Situado en el directorio donde establezco mis propios ejecutables <code class="language-plaintext highlighter-rouge">~/.local/bin/</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="c"># Defaults for configurable values, expected to be set by command-line arguments</span>
+<span class="nv">AUTOSYNC</span><span class="o">=</span><span class="s2">"no"</span>
+<span class="nv">COLOR_MUTED</span><span class="o">=</span><span class="s2">"%{F#6b6b6b}"</span>
+<span class="nv">ICON_MUTED</span><span class="o">=</span>
+<span class="nv">ICON_SINK</span><span class="o">=</span>
+<span class="nv">NOTIFICATIONS</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">OSD</span><span class="o">=</span><span class="s2">"no"</span>
+<span class="nv">SINK_NICKNAMES_PROP</span><span class="o">=</span>
+<span class="nv">VOLUME_STEP</span><span class="o">=</span>2
+<span class="nv">VOLUME_MAX</span><span class="o">=</span>130
+<span class="c"># shellcheck disable=SC2016</span>
+<span class="nv">FORMAT</span><span class="o">=</span><span class="s1">'$VOL_ICON ${VOL_LEVEL}% $ICON_SINK $SINK_NICKNAME'</span>
+<span class="nb">declare</span> <span class="nt">-A</span> SINK_NICKNAMES
+<span class="nb">declare</span> <span class="nt">-a</span> ICONS_VOLUME
+<span class="nb">declare</span> <span class="nt">-a</span> SINK_BLACKLIST
+
+<span class="c"># Environment &amp; global constants for the script</span>
+<span class="nb">export </span><span class="nv">LANG</span><span class="o">=</span>en_US  <span class="c"># Some calls depend on English outputs of pactl</span>
+<span class="nv">END_COLOR</span><span class="o">=</span><span class="s2">"%{F-}"</span>  <span class="c"># For Polybar colors</span>
+
+
+<span class="c"># Saves the currently default sink into a variable named `curSink`. It will</span>
+<span class="c"># return an error code when pulseaudio isn't running.</span>
+<span class="k">function </span>getCurSink<span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">!</span> pactl info &amp;&gt;/dev/null<span class="p">;</span> <span class="k">then return </span>1<span class="p">;</span> <span class="k">fi
+    </span><span class="nb">local </span>curSinkName
+
+    <span class="nv">curSinkName</span><span class="o">=</span><span class="si">$(</span>pactl info | <span class="nb">awk</span> <span class="s1">'/Default Sink: / {print $3}'</span><span class="si">)</span>
+    <span class="nv">curSink</span><span class="o">=</span><span class="si">$(</span>pactl list sinks | <span class="nb">grep</span> <span class="nt">-B</span> 4 <span class="nt">-E</span> <span class="s2">"Name: </span><span class="nv">$curSinkName</span><span class="se">\$</span><span class="s2">"</span> | <span class="nb">sed</span> <span class="nt">-nE</span> <span class="s1">'s/^Sink #([0-9]+)$/\1/p'</span><span class="si">)</span>
+<span class="o">}</span>
+
+
+<span class="c"># Saves the sink passed by parameter's volume into a variable named `VOL_LEVEL`.</span>
+<span class="k">function </span>getCurVol<span class="o">()</span> <span class="o">{</span>
+    <span class="nv">VOL_LEVEL</span><span class="o">=</span><span class="si">$(</span>pactl list sinks | <span class="nb">grep</span> <span class="nt">-A</span> 15 <span class="nt">-E</span> <span class="s2">"^Sink #</span><span class="nv">$1</span><span class="se">\$</span><span class="s2">"</span> | <span class="nb">grep</span> <span class="s1">'Volume:'</span> | <span class="nb">grep</span> <span class="nt">-E</span> <span class="nt">-v</span> <span class="s1">'Base Volume:'</span> | <span class="nb">awk</span> <span class="nt">-F</span> : <span class="s1">'{print $3; exit}'</span> | <span class="nb">grep</span> <span class="nt">-o</span> <span class="nt">-P</span> <span class="s1">'.{0,3}%'</span> | <span class="nb">sed</span> <span class="s1">'s/.$//'</span> | <span class="nb">tr</span> <span class="nt">-d</span> <span class="s1">' '</span><span class="si">)</span>
+<span class="o">}</span>
+
+
+<span class="c"># Saves the name of the sink passed by parameter into a variable named</span>
+<span class="c"># `sinkName`.</span>
+<span class="k">function </span>getSinkName<span class="o">()</span> <span class="o">{</span>
+    <span class="nv">sinkName</span><span class="o">=</span><span class="si">$(</span>pactl list sinks short | <span class="nb">awk</span> <span class="nt">-v</span> <span class="nv">sink</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="s1">'{ if ($1 == sink) {print $2} }'</span><span class="si">)</span>
+    <span class="nv">portName</span><span class="o">=</span><span class="si">$(</span>pactl list sinks | <span class="nb">grep</span> <span class="nt">-e</span> <span class="s1">'Sink #'</span> <span class="nt">-e</span> <span class="s1">'Active Port: '</span> | <span class="nb">sed</span> <span class="nt">-n</span> <span class="s2">"/^Sink #</span><span class="nv">$1</span><span class="se">\$</span><span class="s2">/,+1p"</span> | <span class="nb">awk</span> <span class="s1">'/Active Port: / {print $3}'</span><span class="si">)</span>
+<span class="o">}</span>
+
+
+<span class="c"># Saves the name to be displayed for the sink passed by parameter into a</span>
+<span class="c"># variable called `SINK_NICKNAME`.</span>
+<span class="c"># If a mapping for the sink name exists, that is used. Otherwise, the string</span>
+<span class="c"># "Sink #&lt;index&gt;" is used.</span>
+<span class="k">function </span>getNickname<span class="o">()</span> <span class="o">{</span>
+    getSinkName <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+    <span class="nb">unset </span>SINK_NICKNAME
+
+    <span class="k">if</span> <span class="o">[</span> <span class="nt">-n</span> <span class="s2">"</span><span class="nv">$sinkName</span><span class="s2">"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="nt">-n</span> <span class="s2">"</span><span class="nv">$portName</span><span class="s2">"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="nt">-n</span> <span class="s2">"</span><span class="k">${</span><span class="nv">SINK_NICKNAMES</span><span class="p">[</span><span class="nv">$sinkName</span><span class="p">/</span><span class="nv">$portName</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nv">SINK_NICKNAME</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">SINK_NICKNAMES</span><span class="p">[</span><span class="nv">$sinkName</span><span class="p">/</span><span class="nv">$portName</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span>
+    <span class="k">elif</span> <span class="o">[</span> <span class="nt">-n</span> <span class="s2">"</span><span class="nv">$sinkName</span><span class="s2">"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="nt">-n</span> <span class="s2">"</span><span class="k">${</span><span class="nv">SINK_NICKNAMES</span><span class="p">[</span><span class="nv">$sinkName</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nv">SINK_NICKNAME</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">SINK_NICKNAMES</span><span class="p">[</span><span class="nv">$sinkName</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span>
+    <span class="k">elif</span> <span class="o">[</span> <span class="nt">-n</span> <span class="s2">"</span><span class="nv">$sinkName</span><span class="s2">"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="nt">-n</span> <span class="s2">"</span><span class="nv">$SINK_NICKNAMES_PROP</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span>getNicknameFromProp <span class="s2">"</span><span class="nv">$SINK_NICKNAMES_PROP</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$sinkName</span><span class="s2">"</span>
+        <span class="c"># Cache that result for next time</span>
+        SINK_NICKNAMES[<span class="s2">"</span><span class="nv">$sinkName</span><span class="s2">"</span><span class="o">]=</span><span class="s2">"</span><span class="nv">$SINK_NICKNAME</span><span class="s2">"</span>
+    <span class="k">fi
+
+    if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$SINK_NICKNAME</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nv">SINK_NICKNAME</span><span class="o">=</span><span class="s2">"Sink #</span><span class="nv">$1</span><span class="s2">"</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="c"># Gets sink nickname based on a given property.</span>
+<span class="k">function </span>getNicknameFromProp<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">local </span><span class="nv">nickname_prop</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+    <span class="nb">local </span><span class="nv">for_name</span><span class="o">=</span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+
+    <span class="nv">SINK_NICKNAME</span><span class="o">=</span>
+    <span class="k">while </span><span class="nb">read</span> <span class="nt">-r</span> property value<span class="p">;</span> <span class="k">do
+        case</span> <span class="s2">"</span><span class="nv">$property</span><span class="s2">"</span> <span class="k">in
+            </span>Nombre:<span class="p">)</span>
+                <span class="nv">sink_name</span><span class="o">=</span><span class="s2">"</span><span class="nv">$value</span><span class="s2">"</span>
+                <span class="nb">unset </span>sink_desc
+                <span class="p">;;</span>
+            <span class="s2">"</span><span class="nv">$nickname_prop</span><span class="s2">"</span><span class="p">)</span>
+                <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$sink_name</span><span class="s2">"</span> <span class="o">!=</span> <span class="s2">"</span><span class="nv">$for_name</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+                    continue
+                fi
+                </span><span class="nv">SINK_NICKNAME</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">value</span>:3:-1<span class="k">}</span><span class="s2">"</span>
+                <span class="nb">break</span>
+                <span class="p">;;</span>
+        <span class="k">esac</span>
+    <span class="k">done</span> &lt; &lt;<span class="o">(</span>pactl list sinks<span class="o">)</span>
+<span class="o">}</span>
+
+<span class="c"># Saves the status of the sink passed by parameter into a variable named</span>
+<span class="c"># `isMuted`.</span>
+<span class="k">function </span>getIsMuted<span class="o">()</span> <span class="o">{</span>
+    <span class="nv">isMuted</span><span class="o">=</span><span class="si">$(</span>pactl list sinks | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s2">"^Sink #</span><span class="nv">$1</span><span class="se">\$</span><span class="s2">"</span> <span class="nt">-A</span> 15 | <span class="nb">awk</span> <span class="s1">'/Mute: / {print $2}'</span><span class="si">)</span>
+<span class="o">}</span>
+
+
+<span class="c"># Saves all the sink inputs of the sink passed by parameter into a string</span>
+<span class="c"># named `sinkInputs`.</span>
+<span class="k">function </span>getSinkInputs<span class="o">()</span> <span class="o">{</span>
+    <span class="nv">sinkInputs</span><span class="o">=</span><span class="si">$(</span>pactl list sink-inputs | <span class="nb">grep</span> <span class="nt">-B</span> 4 <span class="s2">"Sink: </span><span class="nv">$1</span><span class="s2">"</span> | <span class="nb">sed</span> <span class="nt">-nE</span> <span class="s1">'s/^Sink Input #([0-9]+)$/\1/p'</span><span class="si">)</span>
+<span class="o">}</span>
+
+
+<span class="k">function </span>volUp<span class="o">()</span> <span class="o">{</span>
+    <span class="c"># Obtaining the current volume from pulseaudio into $VOL_LEVEL.</span>
+    <span class="k">if</span> <span class="o">!</span> getCurSink<span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"PulseAudio not running"</span>
+        <span class="k">return </span>1
+    <span class="k">fi
+    </span>getCurVol <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span>
+    <span class="nb">local </span><span class="nv">maxLimit</span><span class="o">=</span><span class="k">$((</span>VOLUME_MAX <span class="o">-</span> VOLUME_STEP<span class="k">))</span>
+
+    <span class="c"># Checking the volume upper bounds so that if VOLUME_MAX was 100% and the</span>
+    <span class="c"># increase percentage was 3%, a 99% volume would top at 100% instead</span>
+    <span class="c"># of 102%. If the volume is above the maximum limit, nothing is done.</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$VOL_LEVEL</span><span class="s2">"</span> <span class="nt">-le</span> <span class="s2">"</span><span class="nv">$VOLUME_MAX</span><span class="s2">"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$VOL_LEVEL</span><span class="s2">"</span> <span class="nt">-ge</span> <span class="s2">"</span><span class="nv">$maxLimit</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span>pactl set-sink-volume <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$VOLUME_MAX</span><span class="s2">%"</span>
+    <span class="k">elif</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$VOL_LEVEL</span><span class="s2">"</span> <span class="nt">-lt</span> <span class="s2">"</span><span class="nv">$maxLimit</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span>pactl set-sink-volume <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span> <span class="s2">"+</span><span class="nv">$VOLUME_STEP</span><span class="s2">%"</span>
+    <span class="k">fi
+
+    if</span> <span class="o">[</span> <span class="nv">$OSD</span> <span class="o">=</span> <span class="s2">"yes"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then </span>showOSD <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span><span class="p">;</span> <span class="k">fi
+    if</span> <span class="o">[</span> <span class="nv">$AUTOSYNC</span> <span class="o">=</span> <span class="s2">"yes"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then </span>volSync<span class="p">;</span> <span class="k">fi</span>
+<span class="o">}</span>
+
+
+<span class="k">function </span>volDown<span class="o">()</span> <span class="o">{</span>
+    <span class="c"># Pactl already handles the volume lower bounds so that negative values</span>
+    <span class="c"># are ignored.</span>
+    <span class="k">if</span> <span class="o">!</span> getCurSink<span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"PulseAudio not running"</span>
+        <span class="k">return </span>1
+    <span class="k">fi
+    </span>pactl set-sink-volume <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span> <span class="s2">"-</span><span class="nv">$VOLUME_STEP</span><span class="s2">%"</span>
+
+    <span class="k">if</span> <span class="o">[</span> <span class="nv">$OSD</span> <span class="o">=</span> <span class="s2">"yes"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then </span>showOSD <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span><span class="p">;</span> <span class="k">fi
+    if</span> <span class="o">[</span> <span class="nv">$AUTOSYNC</span> <span class="o">=</span> <span class="s2">"yes"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then </span>volSync<span class="p">;</span> <span class="k">fi</span>
+<span class="o">}</span>
+
+
+<span class="k">function </span>volSync<span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">!</span> getCurSink<span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"PulseAudio not running"</span>
+        <span class="k">return </span>1
+    <span class="k">fi
+    </span>getSinkInputs <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span>
+    getCurVol <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span>
+
+    <span class="c"># Every output found in the active sink has their volume set to the</span>
+    <span class="c"># current one. This will only be called if $AUTOSYNC is `yes`.</span>
+    <span class="k">for </span>each <span class="k">in</span> <span class="nv">$sinkInputs</span><span class="p">;</span> <span class="k">do
+        </span>pactl set-sink-input-volume <span class="s2">"</span><span class="nv">$each</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$VOL_LEVEL</span><span class="s2">%"</span>
+    <span class="k">done</span>
+<span class="o">}</span>
+
+
+<span class="k">function </span>volMute<span class="o">()</span> <span class="o">{</span>
+    <span class="c"># Switch to mute/unmute the volume with pactl.</span>
+    <span class="k">if</span> <span class="o">!</span> getCurSink<span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"PulseAudio not running"</span>
+        <span class="k">return </span>1
+    <span class="k">fi
+    if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"toggle"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span>getIsMuted <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span>
+        <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$isMuted</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"yes"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+            </span>pactl set-sink-mute <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span> <span class="s2">"no"</span>
+        <span class="k">else
+            </span>pactl set-sink-mute <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span> <span class="s2">"yes"</span>
+        <span class="k">fi
+    elif</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"mute"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span>pactl set-sink-mute <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span> <span class="s2">"yes"</span>
+    <span class="k">elif</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"unmute"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span>pactl set-sink-mute <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span> <span class="s2">"no"</span>
+    <span class="k">fi
+
+    if</span> <span class="o">[</span> <span class="nv">$OSD</span> <span class="o">=</span> <span class="s2">"yes"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then </span>showOSD <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span><span class="p">;</span> <span class="k">fi</span>
+<span class="o">}</span>
+
+
+<span class="k">function </span>nextSink<span class="o">()</span> <span class="o">{</span>
+    <span class="c"># The final sinks list, removing the blacklisted ones from the list of</span>
+    <span class="c"># currently available sinks.</span>
+    <span class="k">if</span> <span class="o">!</span> getCurSink<span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"PulseAudio not running"</span>
+        <span class="k">return </span>1
+    <span class="k">fi</span>
+
+    <span class="c"># Obtaining a tuple of sink indexes after removing the blacklisted devices</span>
+    <span class="c"># with their name.</span>
+    <span class="nv">sinks</span><span class="o">=()</span>
+    <span class="nb">local </span><span class="nv">i</span><span class="o">=</span>0
+    <span class="k">while </span><span class="nb">read</span> <span class="nt">-r</span> line<span class="p">;</span> <span class="k">do
+        </span><span class="nv">index</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$line</span><span class="s2">"</span> | <span class="nb">cut</span> <span class="nt">-f1</span><span class="si">)</span>
+        <span class="nv">name</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$line</span><span class="s2">"</span> | <span class="nb">cut</span> <span class="nt">-f2</span><span class="si">)</span>
+
+        <span class="c"># If it's in the blacklist, continue the main loop. Otherwise, add</span>
+        <span class="c"># it to the list.</span>
+        <span class="k">for </span>sink <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">SINK_BLACKLIST</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do
+            if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$sink</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"</span><span class="nv">$name</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+                continue </span>2
+            <span class="k">fi
+        done
+
+        </span>sinks[<span class="nv">$i</span><span class="o">]=</span><span class="s2">"</span><span class="nv">$index</span><span class="s2">"</span>
+        <span class="nv">i</span><span class="o">=</span><span class="k">$((</span>i <span class="o">+</span> <span class="m">1</span><span class="k">))</span>
+    <span class="k">done</span> &lt; &lt;<span class="o">(</span>pactl list short sinks | <span class="nb">sort</span> <span class="nt">-n</span><span class="o">)</span>
+
+    <span class="c"># If the resulting list is empty, nothing is done</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="k">${#</span><span class="nv">sinks</span><span class="p">[@]</span><span class="k">}</span> <span class="nt">-eq</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then return</span><span class="p">;</span> <span class="k">fi</span>
+
+    <span class="c"># If the current sink is greater or equal than last one, pick the first</span>
+    <span class="c"># sink in the list. Otherwise just pick the next sink avaliable.</span>
+    <span class="nb">local </span>newSink
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span> <span class="nt">-ge</span> <span class="s2">"</span><span class="k">${</span><span class="nv">sinks</span><span class="p">[-1]</span><span class="k">}</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nv">newSink</span><span class="o">=</span><span class="k">${</span><span class="nv">sinks</span><span class="p">[0]</span><span class="k">}</span>
+    <span class="k">else
+        for </span>sink <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">sinks</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do
+            if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span> <span class="nt">-lt</span> <span class="s2">"</span><span class="nv">$sink</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+                </span><span class="nv">newSink</span><span class="o">=</span><span class="nv">$sink</span>
+                <span class="nb">break
+            </span><span class="k">fi
+        done
+    fi</span>
+
+    <span class="c"># The new sink is set</span>
+    pactl set-default-sink <span class="s2">"</span><span class="nv">$newSink</span><span class="s2">"</span>
+
+    <span class="c"># Move all audio threads to new sink</span>
+    <span class="nb">local </span>inputs
+    <span class="nv">inputs</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>pactl list short sink-inputs | <span class="nb">cut</span> <span class="nt">-f</span> 1<span class="si">)</span><span class="s2">"</span>
+    <span class="k">for </span>i <span class="k">in</span> <span class="nv">$inputs</span><span class="p">;</span> <span class="k">do
+        </span>pactl move-sink-input <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$newSink</span><span class="s2">"</span>
+    <span class="k">done
+
+    if</span> <span class="o">[</span> <span class="nv">$NOTIFICATIONS</span> <span class="o">=</span> <span class="s2">"yes"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span>getNickname <span class="s2">"</span><span class="nv">$newSink</span><span class="s2">"</span>
+
+        <span class="k">if </span><span class="nb">command</span> <span class="nt">-v</span> dunstify &amp;&gt;/dev/null<span class="p">;</span> <span class="k">then
+            </span><span class="nv">notify</span><span class="o">=</span><span class="s2">"dunstify --replace 201839192"</span>
+        <span class="k">else
+            </span><span class="nv">notify</span><span class="o">=</span><span class="s2">"notify-send"</span>
+        <span class="k">fi</span>
+        <span class="nv">$notify</span> <span class="s2">"PulseAudio"</span> <span class="s2">"Changed output to </span><span class="nv">$SINK_NICKNAME</span><span class="s2">"</span> <span class="nt">--icon</span><span class="o">=</span>audio-headphones-symbolic &amp;
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+
+<span class="c"># This function assumes that PulseAudio is already running. It only supports</span>
+<span class="c"># KDE OSDs for now. It will show a system message with the status of the</span>
+<span class="c"># sink passed by parameter, or the currently active one by default.</span>
+<span class="k">function </span>showOSD<span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nv">curSink</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+    <span class="k">else
+        </span>getCurSink
+    <span class="k">fi
+    </span>getCurVol <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span>
+    getIsMuted <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span>
+    qdbus org.kde.kded /modules/kosd showVolume <span class="s2">"</span><span class="nv">$VOL_LEVEL</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$isMuted</span><span class="s2">"</span>
+<span class="o">}</span>
+
+
+<span class="k">function </span>listen<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">local </span><span class="nv">firstRun</span><span class="o">=</span>0
+
+    <span class="c"># Listen for changes and immediately create new output for the bar.</span>
+    <span class="c"># This is faster than having the script on an interval.</span>
+    pactl subscribe 2&gt;/dev/null | <span class="o">{</span>
+        <span class="k">while </span><span class="nb">true</span><span class="p">;</span> <span class="k">do</span>
+            <span class="o">{</span>
+                <span class="c"># If this is the first time just continue and print the current</span>
+                <span class="c"># state. Otherwise wait for events. This is to prevent the</span>
+                <span class="c"># module being empty until an event occurs.</span>
+                <span class="k">if</span> <span class="o">[</span> <span class="nv">$firstRun</span> <span class="nt">-eq</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+                    </span><span class="nv">firstRun</span><span class="o">=</span>1
+                <span class="k">else
+                    </span><span class="nb">read</span> <span class="nt">-r</span> event <span class="o">||</span> <span class="nb">break</span>
+                    <span class="c"># Avoid double events</span>
+                    <span class="k">if</span> <span class="o">!</span> <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$event</span><span class="s2">"</span> | <span class="nb">grep</span> <span class="nt">-e</span> <span class="s2">"on card"</span> <span class="nt">-e</span> <span class="s2">"on sink"</span> <span class="nt">-e</span> <span class="s2">"on server"</span><span class="p">;</span> <span class="k">then
+                        continue
+                    fi
+                fi</span>
+            <span class="o">}</span> &amp;&gt;/dev/null
+            output
+        <span class="k">done</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="k">function </span>output<span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">!</span> getCurSink<span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"PulseAudio not running"</span>
+        <span class="k">return </span>1
+    <span class="k">fi
+    </span>getCurVol <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span>
+    getIsMuted <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span>
+
+    <span class="c"># Fixed volume icons over max volume</span>
+    <span class="nb">local </span><span class="nv">iconsLen</span><span class="o">=</span><span class="k">${#</span><span class="nv">ICONS_VOLUME</span><span class="p">[@]</span><span class="k">}</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$iconsLen</span><span class="s2">"</span> <span class="nt">-ne</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nb">local </span><span class="nv">volSplit</span><span class="o">=</span><span class="k">$((</span>VOLUME_MAX <span class="o">/</span> iconsLen<span class="k">))</span>
+        <span class="k">for </span>i <span class="k">in</span> <span class="si">$(</span><span class="nb">seq </span>1 <span class="s2">"</span><span class="nv">$iconsLen</span><span class="s2">"</span><span class="si">)</span><span class="p">;</span> <span class="k">do
+            if</span> <span class="o">[</span> <span class="k">$((</span>i <span class="o">*</span> volSplit<span class="k">))</span> <span class="nt">-ge</span> <span class="s2">"</span><span class="nv">$VOL_LEVEL</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+                </span><span class="nv">VOL_ICON</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">ICONS_VOLUME</span><span class="p">[</span><span class="k">$((</span>i-1<span class="k">))</span><span class="p">]</span><span class="k">}</span><span class="s2">"</span>
+                <span class="nb">break
+            </span><span class="k">fi
+        done
+    else
+        </span><span class="nv">VOL_ICON</span><span class="o">=</span><span class="s2">""</span>
+    <span class="k">fi
+
+    </span>getNickname <span class="s2">"</span><span class="nv">$curSink</span><span class="s2">"</span>
+
+    <span class="c"># Showing the formatted message</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$isMuted</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"yes"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="c"># shellcheck disable=SC2034</span>
+        <span class="nv">VOL_ICON</span><span class="o">=</span><span class="nv">$ICON_MUTED</span>
+        <span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">COLOR_MUTED</span><span class="k">}</span><span class="si">$(</span><span class="nb">eval echo</span> <span class="s2">"</span><span class="nv">$FORMAT</span><span class="s2">"</span><span class="si">)</span><span class="k">${</span><span class="nv">END_COLOR</span><span class="k">}</span><span class="s2">"</span>
+    <span class="k">else
+        </span><span class="nb">eval echo</span> <span class="s2">"</span><span class="nv">$FORMAT</span><span class="s2">"</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+
+<span class="k">function </span>usage<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">echo</span> <span class="s2">"</span><span class="se">\</span><span class="s2">
+Usage: </span><span class="nv">$0</span><span class="s2"> [OPTION...] ACTION
+
+Options:
+  --autosync | --no-autosync
+        Whether to maintain same volume for all programs.
+        Default: </span><span class="nv">$AUTOSYNC</span><span class="s2">
+  --color-muted &lt;rrggbb&gt;
+        Color in which to format when muted.
+        Default: </span><span class="k">${</span><span class="nv">COLOR_MUTED</span>:4:-1<span class="k">}</span><span class="s2">
+  --notifications | --no-notifications
+        Whether to show notifications when changing sinks.
+        Default: </span><span class="nv">$NOTIFICATIONS</span><span class="s2">
+  --osd | --no-osd
+        Whether to display KDE's OSD message.
+        Default: </span><span class="nv">$OSD</span><span class="s2">
+  --icon-muted &lt;icon&gt;
+        Icon to use when muted.
+        Default: none
+  --icon-sink &lt;icon&gt;
+        Icon to use for sink.
+        Default: none
+  --format &lt;string&gt;
+        Use a format string to control the output.
+        Available variables:
+        * </span><span class="se">\$</span><span class="s2">VOL_ICON
+        * </span><span class="se">\$</span><span class="s2">VOL_LEVEL
+        * </span><span class="se">\$</span><span class="s2">ICON_SINK
+        * </span><span class="se">\$</span><span class="s2">SINK_NICKNAME
+        Default: </span><span class="nv">$FORMAT</span><span class="s2">
+  --icons-volume &lt;icon&gt;[,&lt;icon&gt;...]
+        Icons for volume, from lower to higher.
+        Default: none
+  --volume-max &lt;int&gt;
+        Maximum volume to which to allow increasing.
+        Default: </span><span class="nv">$VOLUME_MAX</span><span class="s2">
+  --volume-step &lt;int&gt;
+        Step size when inc/decrementing volume.
+        Default: </span><span class="nv">$VOLUME_STEP</span><span class="s2">
+  --sink-blacklist &lt;name&gt;[,&lt;name&gt;...]
+        Sinks to ignore when switching.
+        Default: none
+  --sink-nicknames-from &lt;prop&gt;
+        pactl property to use for sink names, unless overriden by
+        --sink-nickname. Its possible values are listed under the 'Properties'
+        key in the output of </span><span class="se">\`</span><span class="s2">pactl list sinks</span><span class="se">\`</span><span class="s2">
+        Default: none
+  --sink-nickname &lt;name&gt;:&lt;nick&gt;
+        Nickname to assign to given sink name, taking priority over
+        --sink-nicknames-from. May be given multiple times, and 'name' is
+        exactly as listed in the output of </span><span class="se">\`</span><span class="s2">pactl list sinks short | cut -f2</span><span class="se">\`</span><span class="s2">.
+        Note that you can also specify a port name for the sink with
+        </span><span class="se">\`</span><span class="s2">&lt;name&gt;/&lt;port&gt;</span><span class="se">\`</span><span class="s2">.
+        Default: none
+
+Actions:
+  help              display this message and exit
+  output            print the PulseAudio status once
+  listen            listen for changes in PulseAudio to automatically update
+                    this script's output
+  up, down          increase or decrease the default sink's volume
+  mute, unmute      mute or unmute the default sink's audio
+  togmute           switch between muted and unmuted
+  next-sink         switch to the next available sink
+  sync              synchronize all the output streams volume to be the same as
+                    the current sink's volume
+
+Author:
+    Mario Ortiz Manero
+More info on GitHub:
+    https://github.com/marioortizmanero/polybar-pulseaudio-control"</span>
+<span class="o">}</span>
+
+<span class="k">while</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">=</span> <span class="nt">--</span><span class="k">*</span> <span class="o">]]</span><span class="p">;</span> <span class="k">do
+    </span><span class="nb">unset </span>arg
+    <span class="nb">unset </span>val
+    <span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">=</span> <span class="k">*</span><span class="o">=</span><span class="k">*</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nv">arg</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">1</span><span class="p">//=*/</span><span class="k">}</span><span class="s2">"</span>
+        <span class="nv">val</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">1</span><span class="p">//*=/</span><span class="k">}</span><span class="s2">"</span>
+        <span class="nb">shift
+    </span><span class="k">else
+        </span><span class="nv">arg</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+        <span class="c"># Support space-separated values, but also value-less flags</span>
+        <span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span> <span class="o">!=</span> <span class="nt">--</span><span class="k">*</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+            </span><span class="nv">val</span><span class="o">=</span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+            <span class="nb">shift
+        </span><span class="k">fi
+        </span><span class="nb">shift
+    </span><span class="k">fi
+
+    case</span> <span class="s2">"</span><span class="nv">$arg</span><span class="s2">"</span> <span class="k">in</span>
+        <span class="nt">--autosync</span><span class="p">)</span>
+            <span class="nv">AUTOSYNC</span><span class="o">=</span><span class="nb">yes</span>
+            <span class="p">;;</span>
+        <span class="nt">--no-autosync</span><span class="p">)</span>
+            <span class="nv">AUTOSYNC</span><span class="o">=</span>no
+            <span class="p">;;</span>
+        <span class="nt">--color-muted</span><span class="p">|</span><span class="nt">--colour-muted</span><span class="p">)</span>
+            <span class="nv">COLOR_MUTED</span><span class="o">=</span><span class="s2">"%{F#</span><span class="nv">$val</span><span class="s2">}"</span>
+            <span class="p">;;</span>
+        <span class="nt">--notifications</span><span class="p">)</span>
+            <span class="nv">NOTIFICATIONS</span><span class="o">=</span><span class="nb">yes</span>
+            <span class="p">;;</span>
+        <span class="nt">--no-notifications</span><span class="p">)</span>
+            <span class="nv">NOTIFICATIONS</span><span class="o">=</span>no
+            <span class="p">;;</span>
+        <span class="nt">--osd</span><span class="p">)</span>
+            <span class="nv">OSD</span><span class="o">=</span><span class="nb">yes</span>
+            <span class="p">;;</span>
+        <span class="nt">--no-osd</span><span class="p">)</span>
+            <span class="nv">OSD</span><span class="o">=</span>no
+            <span class="p">;;</span>
+        <span class="nt">--icon-muted</span><span class="p">)</span>
+            <span class="nv">ICON_MUTED</span><span class="o">=</span><span class="s2">"</span><span class="nv">$val</span><span class="s2">"</span>
+            <span class="p">;;</span>
+        <span class="nt">--icon-sink</span><span class="p">)</span>
+            <span class="c"># shellcheck disable=SC2034</span>
+            <span class="nv">ICON_SINK</span><span class="o">=</span><span class="s2">"</span><span class="nv">$val</span><span class="s2">"</span>
+            <span class="p">;;</span>
+        <span class="nt">--icons-volume</span><span class="p">)</span>
+            <span class="nv">IFS</span><span class="o">=</span>, <span class="nb">read</span> <span class="nt">-r</span> <span class="nt">-a</span> ICONS_VOLUME <span class="o">&lt;&lt;&lt;</span> <span class="s2">"</span><span class="nv">$val</span><span class="s2">"</span>
+            <span class="p">;;</span>
+        <span class="nt">--volume-max</span><span class="p">)</span>
+            <span class="nv">VOLUME_MAX</span><span class="o">=</span><span class="s2">"</span><span class="nv">$val</span><span class="s2">"</span>
+            <span class="p">;;</span>
+        <span class="nt">--volume-step</span><span class="p">)</span>
+            <span class="nv">VOLUME_STEP</span><span class="o">=</span><span class="s2">"</span><span class="nv">$val</span><span class="s2">"</span>
+            <span class="p">;;</span>
+        <span class="nt">--sink-blacklist</span><span class="p">)</span>
+            <span class="nv">IFS</span><span class="o">=</span>, <span class="nb">read</span> <span class="nt">-r</span> <span class="nt">-a</span> SINK_BLACKLIST <span class="o">&lt;&lt;&lt;</span> <span class="s2">"</span><span class="nv">$val</span><span class="s2">"</span>
+            <span class="p">;;</span>
+        <span class="nt">--sink-nicknames-from</span><span class="p">)</span>
+            <span class="nv">SINK_NICKNAMES_PROP</span><span class="o">=</span><span class="s2">"</span><span class="nv">$val</span><span class="s2">"</span>
+            <span class="p">;;</span>
+        <span class="nt">--sink-nickname</span><span class="p">)</span>
+            SINK_NICKNAMES[<span class="s2">"</span><span class="k">${</span><span class="nv">val</span><span class="p">//</span>:<span class="p">*/</span><span class="k">}</span><span class="s2">"</span><span class="o">]=</span><span class="s2">"</span><span class="k">${</span><span class="nv">val</span><span class="p">//*</span>:<span class="k">}</span><span class="s2">"</span>
+            <span class="p">;;</span>
+        <span class="nt">--format</span><span class="p">)</span>
+	    <span class="nv">FORMAT</span><span class="o">=</span><span class="s2">"</span><span class="nv">$val</span><span class="s2">"</span>
+            <span class="p">;;</span>
+        <span class="k">*</span><span class="p">)</span>
+            <span class="nb">echo</span> <span class="s2">"Unrecognised option: </span><span class="nv">$arg</span><span class="s2">"</span> <span class="o">&gt;</span>&amp;2
+            <span class="nb">exit </span>1
+            <span class="p">;;</span>
+    <span class="k">esac</span>
+<span class="k">done
+
+case</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="k">in
+    </span>up<span class="p">)</span>
+        volUp
+        <span class="p">;;</span>
+    down<span class="p">)</span>
+        volDown
+        <span class="p">;;</span>
+    togmute<span class="p">)</span>
+        volMute toggle
+        <span class="p">;;</span>
+    mute<span class="p">)</span>
+        volMute mute
+        <span class="p">;;</span>
+    unmute<span class="p">)</span>
+        volMute unmute
+        <span class="p">;;</span>
+    <span class="nb">sync</span><span class="p">)</span>
+        volSync
+        <span class="p">;;</span>
+    listen<span class="p">)</span>
+        listen
+        <span class="p">;;</span>
+    next-sink<span class="p">)</span>
+        nextSink
+        <span class="p">;;</span>
+    output<span class="p">)</span>
+        output
+        <span class="p">;;</span>
+    <span class="nb">help</span><span class="p">)</span>
+        usage
+        <span class="p">;;</span>
+    <span class="k">*</span><span class="p">)</span>
+        <span class="nb">echo</span> <span class="s2">"Unrecognised action: </span><span class="nv">$1</span><span class="s2">"</span> <span class="o">&gt;</span>&amp;2
+        <span class="nb">exit </span>1
+        <span class="p">;;</span>
+<span class="k">esac</span>
+</code></pre></div></div>
+
+<h2 id="terminal">Terminal</h2>
+<p>Existen varios emuladores de terminal, en mi caso hago uso de <code class="language-plaintext highlighter-rouge">gnome-terminal</code>.</p>
+
+<h3 id="archivo-zshrc">Archivo .zshrc</h3>
+<p>Este es el archivo de configuración que dispone de <code class="language-plaintext highlighter-rouge">temas</code>, <code class="language-plaintext highlighter-rouge">funciones</code>, <code class="language-plaintext highlighter-rouge">alias</code> y <code class="language-plaintext highlighter-rouge">plugins</code> para que el uso en consola sea mucho más fluido y cómodo.</p>
+
+<p>Está situado en el directorio <code class="language-plaintext highlighter-rouge">~</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span>
+<span class="c"># Initialization code that may require console input (password prompts, [y/n]</span>
+<span class="c"># confirmations, etc.) must go above this block; everything else may go below.</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="nt">-r</span> <span class="s2">"</span><span class="k">${</span><span class="nv">XDG_CACHE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.cache</span><span class="k">}</span><span class="s2">/p10k-instant-prompt-</span><span class="k">${</span><span class="p">(%)</span><span class="k">:-</span><span class="p">%n</span><span class="k">}</span><span class="s2">.zsh"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">source</span> <span class="s2">"</span><span class="k">${</span><span class="nv">XDG_CACHE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.cache</span><span class="k">}</span><span class="s2">/p10k-instant-prompt-</span><span class="k">${</span><span class="p">(%)</span><span class="k">:-</span><span class="p">%n</span><span class="k">}</span><span class="s2">.zsh"</span>
+<span class="k">fi</span>
+
+<span class="c"># Set up the prompt</span>
+
+autoload <span class="nt">-Uz</span> promptinit
+promptinit
+prompt adam1
+
+setopt histignorealldups sharehistory
+
+<span class="c"># Use emacs keybindings even if our EDITOR is set to vi</span>
+bindkey <span class="nt">-e</span>
+
+<span class="c"># Keep 1000 lines of history within the shell and save it to ~/.zsh_history:</span>
+<span class="nv">HISTSIZE</span><span class="o">=</span>1000
+<span class="nv">SAVEHIST</span><span class="o">=</span>1000
+<span class="nv">HISTFILE</span><span class="o">=</span>~/.zsh_history
+
+<span class="c"># Use modern completion system</span>
+autoload <span class="nt">-Uz</span> compinit
+compinit
+
+zstyle <span class="s1">':completion:*'</span> auto-description <span class="s1">'specify: %d'</span>
+zstyle <span class="s1">':completion:*'</span> completer _expand _complete _correct _approximate
+zstyle <span class="s1">':completion:*'</span> format <span class="s1">'Completing %d'</span>
+zstyle <span class="s1">':completion:*'</span> group-name <span class="s1">''</span>
+zstyle <span class="s1">':completion:*'</span> menu <span class="k">select</span><span class="o">=</span>2
+<span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">dircolors</span> <span class="nt">-b</span><span class="si">)</span><span class="s2">"</span>
+zstyle <span class="s1">':completion:*:default'</span> list-colors <span class="k">${</span><span class="p">(s.</span>:.<span class="p">)LS_COLORS</span><span class="k">}</span>
+zstyle <span class="s1">':completion:*'</span> list-colors <span class="s1">''</span>
+zstyle <span class="s1">':completion:*'</span> list-prompt %SAt %p: Hit TAB <span class="k">for </span>more, or the character to insert%s
+zstyle <span class="s1">':completion:*'</span> matcher-list <span class="s1">''</span> <span class="s1">'m:{a-z}={A-Z}'</span> <span class="s1">'m:{a-zA-Z}={A-Za-z}'</span> <span class="s1">'r:|[._-]=* r:|=* l:|=*'</span>
+zstyle <span class="s1">':completion:*'</span> menu <span class="k">select</span><span class="o">=</span>long
+zstyle <span class="s1">':completion:*'</span> <span class="k">select</span><span class="nt">-prompt</span> %SScrolling active: current selection at %p%s
+zstyle <span class="s1">':completion:*'</span> use-compctl <span class="nb">false
+</span>zstyle <span class="s1">':completion:*'</span> verbose <span class="nb">true
+
+</span>zstyle <span class="s1">':completion:*:*:kill:*:processes'</span> list-colors <span class="s1">'=(#b) #([0-9]#)*=0=01;31'</span>
+zstyle <span class="s1">':completion:*:kill:*'</span> <span class="nb">command</span> <span class="s1">'ps -u $USER -o pid,%cpu,tty,cputime,cmd'</span>
+<span class="nb">source</span> ~/powerlevel10k/powerlevel10k.zsh-theme
+
+<span class="c"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span>
+<span class="o">[[</span> <span class="o">!</span> <span class="nt">-f</span> ~/.p10k.zsh <span class="o">]]</span> <span class="o">||</span> <span class="nb">source</span> ~/.p10k.zsh
+
+<span class="c"># ==================================</span>
+<span class="c"># 	MANUAL CONFIGURATION</span>
+<span class="c"># ==================================</span>
+
+<span class="c"># === MAN COLORS ===</span>
+<span class="k">function </span>man<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">env</span> <span class="se">\</span>
+    <span class="nv">LESS_TERMCAP_mb</span><span class="o">=</span><span class="s1">$'</span><span class="se">\e</span><span class="s1">[01;31m'</span> <span class="se">\</span>
+    <span class="nv">LESS_TERMCAP_md</span><span class="o">=</span><span class="s1">$'</span><span class="se">\e</span><span class="s1">[01;31m'</span> <span class="se">\</span>
+    <span class="nv">LESS_TERMCAP_me</span><span class="o">=</span><span class="s1">$'</span><span class="se">\e</span><span class="s1">[0m'</span> <span class="se">\</span>
+    <span class="nv">LESS_TERMCAP_se</span><span class="o">=</span><span class="s1">$'</span><span class="se">\e</span><span class="s1">[0m'</span> <span class="se">\</span>
+    <span class="nv">LESS_TERMCAP_so</span><span class="o">=</span><span class="s1">$'</span><span class="se">\e</span><span class="s1">[01;44;33m'</span> <span class="se">\</span>
+    <span class="nv">LESS_TERMCAP_ue</span><span class="o">=</span><span class="s1">$'</span><span class="se">\e</span><span class="s1">[0m'</span> <span class="se">\</span>
+    <span class="nv">LESS_TERMCAP_us</span><span class="o">=</span><span class="s1">$'</span><span class="se">\e</span><span class="s1">[01;32m'</span> <span class="se">\</span>
+    man <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<span class="o">}</span>
+
+<span class="c"># === ALIAS ===</span>
+
+<span class="c"># batcat</span>
+<span class="nb">alias cat</span><span class="o">=</span><span class="s2">"/usr/bin/batcat --paging never"</span>
+<span class="nb">alias </span><span class="nv">catm</span><span class="o">=</span><span class="s2">"/usr/bin/batcat"</span>
+<span class="nb">alias </span><span class="nv">catn</span><span class="o">=</span><span class="s2">"/usr/bin/cat"</span>
+
+<span class="c"># lsd </span>
+<span class="nb">alias ls</span><span class="o">=</span><span class="s2">"/usr/bin/lsd --group-dirs=first"</span>
+<span class="nb">alias </span><span class="nv">la</span><span class="o">=</span><span class="s2">"/usr/bin/lsd -a --group-dirs=first"</span>
+<span class="nb">alias </span><span class="nv">ll</span><span class="o">=</span><span class="s2">"/usr/bin/lsd -lh --group-dirs=first"</span>
+<span class="nb">alias </span><span class="nv">lla</span><span class="o">=</span><span class="s2">"/usr/bin/lsd -lah --group-dirs=first"</span>
+
+<span class="c"># grep</span>
+<span class="nb">alias grep</span><span class="o">=</span><span class="s2">"/usr/bin/grep --color=auto"</span>
+
+<span class="c"># === PLUGINS ===</span>
+<span class="nb">source</span> /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+<span class="nb">source</span> /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+<span class="nb">source</span> /usr/share/zsh-sudo/sudo.plugin.zsh
+</code></pre></div></div>
+
+        
+        <!-- Boton de volver arriba -->
+        <br>
+        <a href="#page-title" class="back-to-top">Volver arriba &uarr;</a>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#bash" class="page__taxonomy-item p-category" rel="tag">bash</a><span class="sep">, </span>
+    
+      <a href="/tags/#bspwm" class="page__taxonomy-item p-category" rel="tag">bspwm</a><span class="sep">, </span>
+    
+      <a href="/tags/#linux" class="page__taxonomy-item p-category" rel="tag">linux</a><span class="sep">, </span>
+    
+      <a href="/tags/#picom" class="page__taxonomy-item p-category" rel="tag">picom</a><span class="sep">, </span>
+    
+      <a href="/tags/#polybar" class="page__taxonomy-item p-category" rel="tag">polybar</a><span class="sep">, </span>
+    
+      <a href="/tags/#rofi" class="page__taxonomy-item p-category" rel="tag">rofi</a><span class="sep">, </span>
+    
+      <a href="/tags/#sxhkd" class="page__taxonomy-item p-category" rel="tag">sxhkd</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categorías: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#customizaci%C3%B3n" class="page__taxonomy-item p-category" rel="tag">Customización</a><span class="sep">, </span>
+    
+      <a href="/categories/#entorno-de-trabajo" class="page__taxonomy-item p-category" rel="tag">Entorno de trabajo</a><span class="sep">, </span>
+    
+      <a href="/categories/#linux" class="page__taxonomy-item p-category" rel="tag">Linux</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time class="dt-published" datetime="2021-08-12">August 12, 2021</time></p>
+
+      </footer>
+      
+      <!--  -->
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">..</a>
+    
+    
+      <a href="/como-hacer-uso-tmux/" class="pagination--pager" title="Como hacer uso de tmux
+">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+  
+
+  
+  
+</div>
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <!-- <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div> -->
+
+<div class="page__footer-copyright" align="center">&copy; January 2022 | Sh4rkside | Escrito por SrBellver</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
