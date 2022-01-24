@@ -11,19 +11,19 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-remote_theme             : "jekyll/minima"
+remote_theme             : "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin    : "darkme" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "es-ES"
-title                    : "sh4rkside"
+title                    : "devsk4drak"
 title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Sh4rkside"
+name                     : "devsk4drak"
 description              : "Artículos sobre sistemas, ciberseguridad y linux."
-url                      : https://sh4rkside.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://github.com/Skyneet # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : sh4rkside/sh4rkside.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : Skyneet/dev-sk4drak.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : /assets/images/logo/banner.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : " " # overrides the website title displayed in the masthead, use " " for no title
@@ -117,7 +117,7 @@ author:
 
     - label: "GitHub"
       icon: "fab fa-github-alt fa-lg"
-      url: "https://github.com/sh4rkside"
+      url: "https://github.com/Skyneet"
 
     #- label: "Website"
     #  icon: "fas fa-fw fa-link"
